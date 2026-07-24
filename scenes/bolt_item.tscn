@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://eaiasjd0l7wf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhcf7"]
+radius = 20.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dhcf7"]
+load_path = "res://.godot/imported/gmtk3-removebg-preview.png-e471e74e9fd97de8749d99aef4d9c411.ctex"
+
+[node name="BoltItem" type="Area2D" unique_id=431435874]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PickupArea" type="CollisionShape2D" parent="." unique_id=134883796]
+shape = SubResource("CircleShape2D_dhcf7")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=540329507]
+rotation = 0.41015238
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dhcf7")

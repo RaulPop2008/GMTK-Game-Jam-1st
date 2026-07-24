@@ -1,0 +1,679 @@
+[gd_scene format=3 uid="uid://cr0fuy60ompap"]
+
+[ext_resource type="Script" uid="uid://c5f2ko81ikwho" path="res://scripts/pause_menu_ui.gd" id="1_ba1dc"]
+[ext_resource type="Shader" uid="uid://bpdpyiblrbqt5" path="res://scripts/button_glow.gdshader" id="1_tvuuu"]
+[ext_resource type="Script" uid="uid://caleawjpb7xj1" path="res://scripts/button_behaviour.gd" id="2_ba1dc"]
+[ext_resource type="Shader" uid="uid://b2ljvtbhyn27g" path="res://scripts/label_glow_green.gdshader" id="4_donxt"]
+[ext_resource type="FontFile" uid="uid://cp0oillu350yo" path="res://fonts/BROKEN15.TTF" id="5_p8soi"]
+[ext_resource type="Script" uid="uid://b74u76t88lct3" path="res://scripts/label_behaviour.gd" id="6_qkcjt"]
+[ext_resource type="Script" uid="uid://osbv52j3dim8" path="res://scripts/audio_menu_ui.gd" id="7_qmmss"]
+[ext_resource type="FontFile" uid="uid://ymx6ftxg5n7m" path="res://fonts/SpecialElite-Regular.ttf" id="8_22ik4"]
+[ext_resource type="Script" uid="uid://demupxd62460x" path="res://scripts/video_menu_ui.gd" id="9_shmv0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qleia"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksu6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htplj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mhso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt4k1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hh2gf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2yrn"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1eyn1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbdak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2nex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_800i5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3xai"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ei6sf"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm6ef"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isgfn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5jrl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcmk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4cfa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kveqh"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_uhc0e"]
+color = Color(0.514, 1, 0.6, 1)
+grow_begin = 90.0
+grow_end = 90.0
+thickness = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2r77"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kx6dv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybuhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2wpa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6105"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mf2a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fu6ld"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wn0io"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ee5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_788v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3iogb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eamnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubmsp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hynkv"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nwinc"]
+color = Color(0.514, 1, 0.6, 1)
+grow_begin = 90.0
+grow_end = 90.0
+thickness = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsovj"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_soa7f"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lqqaa"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4826m"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl0xn"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hvcl"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5xmw"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ijad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvq2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2fhf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_va4qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsqfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfyta"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u3e20"]
+color = Color(0.514, 1, 0.6, 1)
+grow_begin = 90.0
+grow_end = 90.0
+thickness = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ikxox"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7f38"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1wuk"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tsw3"]
+shader = ExtResource("4_donxt")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w038"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghh75"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhgvi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svyly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6irug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8oum"]
+shader = ExtResource("1_tvuuu")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25i3c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2xms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mg4an"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wllci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2kj1"]
+
+[node name="PauseMenuUI" type="MarginContainer" unique_id=378530491]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ba1dc")
+
+[node name="DarkPanelUI" type="Panel" parent="." unique_id=399811117]
+layout_mode = 2
+
+[node name="PauseMenuButtonsUI" type="VBoxContainer" parent="DarkPanelUI" unique_id=206636474]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -70.0
+offset_right = 90.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="ResumeButtonUI" type="Button" parent="DarkPanelUI/PauseMenuButtonsUI" unique_id=1471969898]
+material = SubResource("ShaderMaterial_qleia")
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Save&QuitButtonUI")
+focus_neighbor_bottom = NodePath("../OptionsButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksu6v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_htplj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7mhso")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vt4k1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hh2gf")
+text = "Resume"
+script = ExtResource("2_ba1dc")
+
+[node name="OptionsButtonUI" type="Button" parent="DarkPanelUI/PauseMenuButtonsUI" unique_id=1799094371]
+material = SubResource("ShaderMaterial_g2yrn")
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../ResumeButtonUI")
+focus_neighbor_bottom = NodePath("../Save&QuitButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1eyn1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mbdak")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b2nex")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_800i5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w3xai")
+text = "Options"
+script = ExtResource("2_ba1dc")
+
+[node name="Save&QuitButtonUI" type="Button" parent="DarkPanelUI/PauseMenuButtonsUI" unique_id=877971472]
+material = SubResource("ShaderMaterial_ei6sf")
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../OptionsButtonUI")
+focus_neighbor_bottom = NodePath("../ResumeButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xm6ef")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_isgfn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q5jrl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fvcmk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o4cfa")
+text = "Save & Quit"
+script = ExtResource("2_ba1dc")
+
+[node name="OptionsMenuUI" type="MarginContainer" parent="." unique_id=593719383]
+visible = false
+layout_mode = 2
+
+[node name="OptionsContainerUI" type="VBoxContainer" parent="OptionsMenuUI" unique_id=518072113]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 227
+
+[node name="AudioVideoContainerUI" type="VBoxContainer" parent="OptionsMenuUI/OptionsContainerUI" unique_id=1185322208]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="OptionsTitleUI" type="Label" parent="OptionsMenuUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=793705434]
+material = SubResource("ShaderMaterial_kveqh")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_p8soi")
+theme_override_font_sizes/font_size = 100
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qkcjt")
+
+[node name="SeparationLineUI" type="Panel" parent="OptionsMenuUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1279281089]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_uhc0e")
+
+[node name="AudioButtonUI" type="Button" parent="OptionsMenuUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=2067405006]
+material = SubResource("ShaderMaterial_u2r77")
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../GoBackButtonUI")
+focus_neighbor_bottom = NodePath("../VideoButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kx6dv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ybuhe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b2wpa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6105")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mf2a")
+text = "Audio"
+script = ExtResource("2_ba1dc")
+
+[node name="VideoButtonUI" type="Button" parent="OptionsMenuUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1431434591]
+material = SubResource("ShaderMaterial_fu6ld")
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../AudioButtonUI")
+focus_neighbor_bottom = NodePath("../../GoBackButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kx6dv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ybuhe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b2wpa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6105")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mf2a")
+text = "Video"
+script = ExtResource("2_ba1dc")
+
+[node name="GoBackButtonUI" type="Button" parent="OptionsMenuUI/OptionsContainerUI" unique_id=346389243]
+material = SubResource("ShaderMaterial_wn0io")
+layout_mode = 2
+focus_neighbor_top = NodePath("../AudioVideoContainerUI/VideoButtonUI")
+focus_neighbor_bottom = NodePath("../AudioVideoContainerUI/AudioButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ee5f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_788v5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3iogb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eamnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ubmsp")
+text = "Go Back"
+script = ExtResource("2_ba1dc")
+
+[node name="AudioMenuUI" type="MarginContainer" parent="." unique_id=1585344209]
+visible = false
+layout_mode = 2
+script = ExtResource("7_qmmss")
+
+[node name="AudioMenuContainerUI" type="VBoxContainer" parent="AudioMenuUI" unique_id=366282046]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="AudioTitleUI" type="Label" parent="AudioMenuUI/AudioMenuContainerUI" unique_id=1335480872]
+material = SubResource("ShaderMaterial_hynkv")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_p8soi")
+theme_override_font_sizes/font_size = 100
+text = "AUDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qkcjt")
+
+[node name="SeparationLineUI" type="Panel" parent="AudioMenuUI/AudioMenuContainerUI" unique_id=1162933011]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_nwinc")
+
+[node name="LabelBarsContainerUI" type="HBoxContainer" parent="AudioMenuUI/AudioMenuContainerUI" unique_id=1198762077]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 120
+
+[node name="LabelsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=148066061]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 25
+
+[node name="MasterVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1159155372]
+material = SubResource("ShaderMaterial_bsovj")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume:"
+script = ExtResource("6_qkcjt")
+
+[node name="MusicVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1169763456]
+material = SubResource("ShaderMaterial_soa7f")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "Music Volume:"
+script = ExtResource("6_qkcjt")
+
+[node name="SoundVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=953859318]
+material = SubResource("ShaderMaterial_lqqaa")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "SFX Volume:"
+script = ExtResource("6_qkcjt")
+
+[node name="BarsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=2012433085]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="MasterVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=532842788]
+material = SubResource("ShaderMaterial_4826m")
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../../../GoBackButtonUI")
+focus_neighbor_bottom = NodePath("../MusicVolumeSliderUI")
+max_value = 1.0
+step = 0.1
+
+[node name="MusicVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=452684725]
+material = SubResource("ShaderMaterial_sl0xn")
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../MasterVolumeSliderUI")
+focus_neighbor_bottom = NodePath("../SFXVolumeSliderUI")
+max_value = 1.0
+step = 0.1
+
+[node name="SFXVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=94926028]
+material = SubResource("ShaderMaterial_2hvcl")
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../MusicVolumeSliderUI")
+focus_neighbor_bottom = NodePath("../../../GoBackButtonUI")
+max_value = 1.0
+step = 0.1
+
+[node name="GoBackButtonUI" type="Button" parent="AudioMenuUI/AudioMenuContainerUI" unique_id=667295437]
+material = SubResource("ShaderMaterial_w5xmw")
+layout_mode = 2
+focus_neighbor_top = NodePath("../LabelBarsContainerUI/BarsContainerUI/SFXVolumeSliderUI")
+focus_neighbor_bottom = NodePath("../LabelBarsContainerUI/BarsContainerUI/MasterVolumeSliderUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6ijad")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pvq2e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h2fhf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_va4qb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsqfq")
+text = "Go Back"
+script = ExtResource("2_ba1dc")
+
+[node name="VideoMenuUI" type="MarginContainer" parent="." unique_id=906986788]
+visible = false
+layout_mode = 2
+script = ExtResource("9_shmv0")
+
+[node name="VideoMenuContainerUI" type="VBoxContainer" parent="VideoMenuUI" unique_id=1463781847]
+layout_mode = 2
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="VideoOptionsContainerUI" type="VBoxContainer" parent="VideoMenuUI/VideoMenuContainerUI" unique_id=1126254993]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VideoTitleUI" type="Label" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1284210128]
+material = SubResource("ShaderMaterial_gfyta")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_p8soi")
+theme_override_font_sizes/font_size = 100
+text = "VIDEO"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qkcjt")
+
+[node name="SeparationLineUI" type="Panel" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1618157266]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_u3e20")
+
+[node name="ResolutionContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=118964136]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 140
+
+[node name="ResolutionLabelUI" type="Label" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=1664848847]
+material = SubResource("ShaderMaterial_ikxox")
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "Resolution:"
+script = ExtResource("6_qkcjt")
+
+[node name="ResolutionOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=754159832]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../../GoBackButtonUI")
+focus_neighbor_bottom = NodePath("../../FrameCapContainerUI/FrameCapOptionsUI")
+selected = 0
+item_count = 10
+popup/item_0/text = "1024 x 576"
+popup/item_0/id = 0
+popup/item_1/text = "1152 x 648"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+popup/item_3/text = "1280 x 800"
+popup/item_3/id = 3
+popup/item_4/text = "1360 x 768"
+popup/item_4/id = 4
+popup/item_5/text = "1366 x 768"
+popup/item_5/id = 5
+popup/item_6/text = "1440 x 900"
+popup/item_6/id = 6
+popup/item_7/text = "1600 x 900"
+popup/item_7/id = 7
+popup/item_8/text = "1680 x 1050"
+popup/item_8/id = 8
+popup/item_9/text = "1920 x 1080"
+popup/item_9/id = 9
+
+[node name="FrameCapContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=96779782]
+layout_mode = 2
+
+[node name="FrameCapLabelUI" type="Label" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=511839296]
+material = SubResource("ShaderMaterial_x7f38")
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "Frame Rate Cap:"
+script = ExtResource("6_qkcjt")
+
+[node name="FrameCapOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=857156226]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../ResolutionContainerUI/ResolutionOptionsUI")
+focus_neighbor_bottom = NodePath("../../FullScreenContainerUI/FullScreenOptionsUI")
+selected = 0
+item_count = 3
+popup/item_0/text = "60 FPS"
+popup/item_0/id = 0
+popup/item_1/text = "120 FPS"
+popup/item_1/id = 1
+popup/item_2/text = "OFF"
+popup/item_2/id = 2
+
+[node name="FullScreenContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1215496208]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="FullScreenLabelUI" type="Label" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1589429869]
+material = SubResource("ShaderMaterial_u1wuk")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "Fullscreen:"
+script = ExtResource("6_qkcjt")
+
+[node name="FullScreenOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1449082525]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../FrameCapContainerUI/FrameCapOptionsUI")
+focus_neighbor_bottom = NodePath("../../VSyncContainerUI/VSyncCheckButtonUI")
+selected = 0
+item_count = 3
+popup/item_0/text = "Borderless  "
+popup/item_0/id = 0
+popup/item_1/text = "OFF"
+popup/item_1/id = 1
+popup/item_2/text = "ON"
+popup/item_2/id = 2
+
+[node name="VSyncContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=810690455]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSyncLabelUI" type="Label" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=739991850]
+material = SubResource("ShaderMaterial_5tsw3")
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("8_22ik4")
+theme_override_font_sizes/font_size = 32
+text = "V-Sync:"
+script = ExtResource("6_qkcjt")
+
+[node name="VSyncCheckButtonUI" type="CheckButton" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=511236801]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../FullScreenContainerUI/FullScreenOptionsUI")
+focus_neighbor_bottom = NodePath("../../ResetDefaultsButtonUI")
+
+[node name="ResetDefaultsButtonUI" type="Button" parent="VideoMenuUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1408200213]
+material = SubResource("ShaderMaterial_1w038")
+layout_mode = 2
+focus_neighbor_top = NodePath("../VSyncContainerUI/VSyncCheckButtonUI")
+focus_neighbor_bottom = NodePath("../../GoBackButtonUI")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ghh75")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j5wik")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uhgvi")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_svyly")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6irug")
+text = "Reset To Defaults"
+script = ExtResource("2_ba1dc")
+
+[node name="GoBackButtonUI" type="Button" parent="VideoMenuUI/VideoMenuContainerUI" unique_id=1528703266]
+material = SubResource("ShaderMaterial_o8oum")
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../VideoOptionsContainerUI/ResetDefaultsButtonUI")
+focus_neighbor_bottom = NodePath("../VideoOptionsContainerUI/ResolutionContainerUI/ResolutionOptionsUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_25i3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2xms")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mg4an")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wllci")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2kj1")
+text = "Go Back"
+script = ExtResource("2_ba1dc")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dirj0p5u3g1ot"]
+
+[ext_resource type="Texture2D" uid="uid://clyfaitkat48a" path="res://sprites/WhatsApp_Image_2026-07-23_at_11.36.17_AM-removebg-preview.png" id="1_qj3y1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_piejt"]
+radius = 20.0
+
+[node name="NutItem" type="Area2D" unique_id=2053132755]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PickupArea" type="CollisionShape2D" parent="." unique_id=880501627]
+shape = SubResource("CircleShape2D_piejt")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=527125116]
+position = Vector2(-4.9999995, -0.9999999)
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_qj3y1")

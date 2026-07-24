@@ -1,8 +1,66 @@
 [gd_scene format=3 uid="uid://cxsejnskwsdf7"]
 
-[ext_resource type="Script" uid="uid://bt708n37u1fp1" path="res://scenes/world.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://bt708n37u1fp1" path="res://scripts/world.gd" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bk5udoe3ht1uq" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dirj0p5u3g1ot" path="res://scenes/nut_item.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://eaiasjd0l7wf" path="res://scenes/bolt_item.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://r3alxonhuk5a" path="res://scenes/cables_item.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://cwsq5mrla3qur" path="res://scenes/batteries_item.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://cr0fuy60ompap" path="res://scenes/pause_menu_ui.tscn" id="7_i7141"]
 
 [node name="World" type="Node2D" unique_id=1675412853]
 script = ExtResource("1_nnsk1")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2018066663]
+[node name="Player" parent="." unique_id=1133095281 instance=ExtResource("2_rwgxs")]
+position = Vector2(179, 87)
+
+[node name="NutsBoltsCables" type="Node2D" parent="." unique_id=2138924087]
+
+[node name="NutItem" parent="NutsBoltsCables" unique_id=2053132755 instance=ExtResource("3_4wyf3")]
+position = Vector2(532, 148)
+
+[node name="NutItem2" parent="NutsBoltsCables" unique_id=384236590 instance=ExtResource("3_4wyf3")]
+position = Vector2(470, 69)
+
+[node name="NutItem3" parent="NutsBoltsCables" unique_id=905059572 instance=ExtResource("3_4wyf3")]
+position = Vector2(650, 138)
+
+[node name="NutItem4" parent="NutsBoltsCables" unique_id=793869923 instance=ExtResource("3_4wyf3")]
+position = Vector2(559, 21)
+
+[node name="NutItem5" parent="NutsBoltsCables" unique_id=1405847162 instance=ExtResource("3_4wyf3")]
+position = Vector2(641, 83)
+
+[node name="NutItem6" parent="NutsBoltsCables" unique_id=34735010 instance=ExtResource("3_4wyf3")]
+position = Vector2(486, 29)
+
+[node name="NutItem7" parent="NutsBoltsCables" unique_id=1900686637 instance=ExtResource("3_4wyf3")]
+position = Vector2(653, 22)
+
+[node name="NutItem8" parent="NutsBoltsCables" unique_id=2022939429 instance=ExtResource("3_4wyf3")]
+position = Vector2(515, 212)
+
+[node name="NutItem9" parent="NutsBoltsCables" unique_id=868204917 instance=ExtResource("3_4wyf3")]
+position = Vector2(468, 141)
+
+[node name="NutItem10" parent="NutsBoltsCables" unique_id=1489136104 instance=ExtResource("3_4wyf3")]
+position = Vector2(697, 90)
+
+[node name="NutItem11" parent="NutsBoltsCables" unique_id=415314026 instance=ExtResource("3_4wyf3")]
+position = Vector2(595, 169)
+
+[node name="BoltItem" parent="NutsBoltsCables" unique_id=431435874 instance=ExtResource("4_k0juu")]
+position = Vector2(773, 243)
+
+[node name="CablesItem" parent="NutsBoltsCables" unique_id=1298305186 instance=ExtResource("5_71j4m")]
+position = Vector2(618, 332)
+
+[node name="Batteries_item" parent="NutsBoltsCables" unique_id=215472905 instance=ExtResource("6_qfnet")]
+position = Vector2(695, 213)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=989101090]
+
+[node name="PauseMenuUI" parent="CanvasLayer" unique_id=378530491 instance=ExtResource("7_i7141")]
+
+[connection signal="item_pickup" from="Player" to="." method="_on_player_item_pickup"]
+[connection signal="pause_accepted" from="CanvasLayer/PauseMenuUI" to="Player" method="_on_pause_menu_ui_pause_accepted"]
