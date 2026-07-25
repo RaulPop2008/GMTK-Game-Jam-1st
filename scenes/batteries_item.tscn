@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwsq5mrla3qur"]
 
-[ext_resource type="Texture2D" uid="uid://06ods1n3fo4r" path="res://sprites/items/gmtk6.png" id="1_o5wtg"]
+[ext_resource type="Texture2D" uid="uid://ww4th4ugqnko" path="res://sprites/items/baterie.png" id="1_o5wtg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dd5m"]
 radius = 20.0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dirj0p5u3g1ot"]
 
-[ext_resource type="Texture2D" uid="uid://clyfaitkat48a" path="res://sprites/items/WhatsApp_Image_2026-07-23_at_11.36.17_AM-removebg-preview.png" id="1_qj3y1"]
+[ext_resource type="Texture2D" uid="uid://explth83i7ng" path="res://sprites/items/nutsandbolts1.png" id="1_qj3y1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_piejt"]
 radius = 20.0
@@ -9,11 +9,11 @@ radius = 20.0
 collision_layer = 2
 collision_mask = 0
 
+[node name="Texture" type="Sprite2D" parent="." unique_id=527125116]
+position = Vector2(-9.536743e-07, -1.1920929e-07)
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qj3y1")
+
 [node name="PickupArea" type="CollisionShape2D" parent="." unique_id=880501627]
 shape = SubResource("CircleShape2D_piejt")
-
-[node name="Texture" type="Sprite2D" parent="." unique_id=527125116]
-position = Vector2(-4.9999995, -0.9999999)
-rotation = 1.5707964
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_qj3y1")

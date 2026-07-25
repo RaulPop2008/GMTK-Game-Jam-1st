@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dm1xh6l5u8eex"]
+
+[ext_resource type="Script" uid="uid://dkw7phmjomdw6" path="res://scenes/dialogue_start.gd" id="1_jacj1"]
+[ext_resource type="Texture2D" uid="uid://bjqfgfn1yl1sh" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.23_PM.jpeg" id="1_oc1ho"]
+[ext_resource type="FontFile" uid="uid://b6qrw8p75x5hg" path="res://fonts/BlackOpsOne-Regular.ttf" id="3_h7vk0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jacj1"]
+texture = ExtResource("1_oc1ho")
+
+[node name="DialogueStart" type="Control" unique_id=1434076287]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jacj1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1550935182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jacj1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=543609853]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.5137255, 1, 0.6, 1)
+theme_override_fonts/normal_font = ExtResource("3_h7vk0")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+scroll_following = true
+autowrap_mode = 2
+horizontal_alignment = 1

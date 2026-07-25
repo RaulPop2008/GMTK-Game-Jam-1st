@@ -13,7 +13,7 @@ extends Control
 @onready var left_save_button:Button=$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/LeftSaveContainerUI/LeftSaveButtonUI
 @onready var right_save_button:Button=$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/RightSaveContainerUI/RightSaveButtonUI
 
-@onready var main_sound:AudioStreamWAV=preload("res://SFX/i need a breake.wav")
+@onready var main_sound:AudioStreamWAV=preload("res://SFX/I deffinetly came.wav")
 
 const NEW_SAVE_ICON:Texture2D=preload("res://sprites/pixil-frame-0 (23).png")
 const LOAD_SAVE_ICON:Texture2D=preload("res://sprites/pixil-frame-0 (24).png")
@@ -27,7 +27,7 @@ func _ready():
 	player.volume_db=-0
 	add_child(player)
 	player.play()
-	player.finished.connect(player.queue_free)
+	player.finished.connect(player.play)
 	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/StartGameButtonUI.grab_focus()
 
 	$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/LeftSaveContainerUI/LeftSaveButtonUI.pressed.connect(on_left_save_pressed)

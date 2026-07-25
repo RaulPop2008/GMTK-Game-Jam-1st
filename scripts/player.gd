@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 signal item_pickup(item_name:String)
-signal item_count(nut:int,bolt:int,cable:int,batterie:int)
 
 const MOVEMENT_SPEED=450
-const AGE_INCREASE_REQUIREMENT=292
+const AGE_INCREASE_REQUIREMENT=29
 
 var is_paused:bool=false
 var pause_menu_open:bool=false
 var can_pickup:bool=false
+var can_interact:bool=false
 var item_name:String
 
 var new_animation:String
@@ -27,6 +27,10 @@ var has_mask:bool=false
 var has_suit:bool=false
 var has_arm:bool=false
 var has_leg:bool=false
+var mask:int=0
+var suit:int=0
+var arm:int=0
+var leg:int=0
 var has_debuff_brain:bool=false
 var has_debuff_leg:bool=false
 var has_debuff_hand:bool=false
@@ -34,13 +38,13 @@ var has_debuff_vision:bool=false
 var has_debuff_sleepy:bool=false
 var has_debuff_breathing:bool=false
 var has_debuff_shaking:bool=false
-var debuff_brain_multiplier:float=1
-var debuff_leg_multiplier:float=1
-var debuff_hand_multiplier:float=1
-var debuff_vision_multiplier:float=1
-var debuff_sleepy_multiplier:float=1
-var debuff_breathing_multiplier:float=1
-var debuff_shaking_multiplier:float=1
+@onready var debuff_brain_multiplier:float=1
+@onready var debuff_leg_multiplier:float=1
+@onready var debuff_hand_multiplier:float=1
+@onready var debuff_vision_multiplier:float=1
+@onready var debuff_sleepy_multiplier:float=1
+@onready var debuff_breathing_multiplier:float=1
+@onready var debuff_shaking_multiplier:float=1
 var collected_items:Array[String]
 
 var real_age_counter:float=0
@@ -50,6 +54,8 @@ var internal_age_counter:float=0
 @onready var pickup_sound:AudioStreamMP3=preload("res://SFX/little_robot_sound_factory_Pickup_00.mp3")
 
 func _physics_process(delta: float) -> void:
+	show_debuff_multiplier()
+	show_item_count()
 	if can_do==true:
 		Inputs()
 		animation()
@@ -83,6 +89,10 @@ func Inputs():
 ##----------------------------------------------------------
 ## UI
 ##----------------------------------------------------------
+	if Input.is_action_just_pressed("open_crafting") and can_interact:
+		$"../WorldCanvas/CraftMenuUI/Panel/VBoxContainer/MaskCraftButtonUI".grab_focus()
+		$"../WorldCanvas/CraftMenuUI".visible=true
+		can_move=false
 	if Input.is_action_just_pressed("item_pickup") and can_pickup:
 		item_pickup.emit(item_name)
 		can_move=false
@@ -105,7 +115,6 @@ func Inputs():
 		add_child(player)
 		player.play()
 		player.finished.connect(player.queue_free)
-		item_count.emit(nuts,bolts,cables,batteries)
 
 func animation():
 	if facing_direction==1 and is_crouching==true:
@@ -138,11 +147,30 @@ func animation():
 		new_animation=current_animation
 		$PlayerAnimations.play(new_animation)
 
+func show_item_count():
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer/Label.text=str(nuts)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer2/Label.text=str(bolts)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer3/Label.text=str(cables)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer4/Label.text=str(batteries)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer5/Label.text=str(mask)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer6/Label.text=str(suit)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer7/Label.text=str(arm)
+	$PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer8/Label.text=str(leg)
+
+func show_debuff_multiplier():
+	$PlayerCanvas/DebuffsContainerUI/BlurContainerUI/Label.text="x"+str(debuff_vision_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/BreatheContainerUI/Label.text="x"+str(debuff_breathing_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/BrainContainerUI/Label.text="x"+str(debuff_brain_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/HandContainerUI/Label.text="x"+str(debuff_hand_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/ShakeContainerUI/Label.text="x"+str(debuff_shaking_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/LegContainerUI/Label.text="x"+str(debuff_leg_multiplier)
+	$PlayerCanvas/DebuffsContainerUI/SleepContainerUI/Label.text="x"+str(debuff_sleepy_multiplier)
+
 func age_calculator(delta:float):
 	$PlayerCanvas/AgeContainerUI/RealAgeLabelUI.text="Real Age: "+str(real_age)
 	$PlayerCanvas/AgeContainerUI/BodyAgeLabelUI.text="Body Internal Age: "+str(internal_age)
 	real_age_counter+=delta
-	internal_age_counter+=(delta*debuff_brain_multiplier*debuff_breathing_multiplier*debuff_hand_multiplier*debuff_leg_multiplier*debuff_shaking_multiplier*debuff_sleepy_multiplier*debuff_vision_multiplier)
+	internal_age_counter+=(delta*1.2*debuff_brain_multiplier*debuff_breathing_multiplier*debuff_hand_multiplier*debuff_leg_multiplier*debuff_shaking_multiplier*debuff_sleepy_multiplier*debuff_vision_multiplier)
 	if real_age_counter>=AGE_INCREASE_REQUIREMENT:
 		real_age_counter=0
 		real_age+=1
@@ -157,6 +185,12 @@ func _on_player_pickup_zone_area_entered(area: Area2D) -> void:
 func _on_player_pickup_zone_area_exited(area: Area2D) -> void:
 	can_pickup=false
 	item_name="0"
+
+func _on_player_interaction_zone_area_entered(area: Area2D) -> void:
+	can_interact=true
+
+func _on_player_interaction_zone_area_exited(area: Area2D) -> void:
+	can_interact=false
 
 func _on_pause_menu_ui_pause_accepted(has_paused: bool) -> void:
 	can_do=!has_paused

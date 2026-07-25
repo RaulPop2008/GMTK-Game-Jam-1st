@@ -44,7 +44,7 @@ func on_resume_pressed():
 	is_inventory=false
 	$DarkPanelUI.visible=false
 
-func  on_quit_pressed():
+func on_quit_pressed():
 	SaveManager.save_game(SaveManager.current_slot)
 	$DarkPanelUI.visible=false
 	get_tree().change_scene_to_file("res://scenes/game_ui.tscn")
@@ -68,9 +68,3 @@ func on_audio_pressed():
 func on_video_pressed():
 	$VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/GoBackButtonUI.grab_focus()
 	show_panel(video_panel)
-
-func _on_player_item_count(nut: int, bolt: int, cable: int, batterie: int) -> void:
-	bolts=bolt
-	nuts=nut
-	cables=cable
-	batteries=batterie

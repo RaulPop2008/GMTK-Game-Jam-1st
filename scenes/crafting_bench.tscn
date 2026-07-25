@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bywp6orlyt8n7"]
+
+[ext_resource type="Texture2D" uid="uid://b1agiyt3x6tr1" path="res://sprites/craft.png" id="1_hjix3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nghuw"]
+radius = 196.47137
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjix3"]
+size = Vector2(237, 155.5)
+
+[node name="CraftingBench" type="Area2D" unique_id=806630993]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1289758050]
+texture = ExtResource("1_hjix3")
+
+[node name="InteractionArea" type="CollisionShape2D" parent="." unique_id=1690534983]
+shape = SubResource("CircleShape2D_nghuw")
+
+[node name="Body" type="StaticBody2D" parent="." unique_id=2143794004]
+collision_layer = 8
+collision_mask = 0
+
+[node name="BodyBox" type="CollisionShape2D" parent="Body" unique_id=1108506612]
+position = Vector2(-19, 11)
+shape = SubResource("RectangleShape2D_hjix3")

@@ -18,19 +18,32 @@
 [ext_resource type="FontFile" uid="uid://b6qrw8p75x5hg" path="res://fonts/BlackOpsOne-Regular.ttf" id="16_a8ls1"]
 [ext_resource type="Script" uid="uid://bbhqjxuupfty1" path="res://scripts/player_label_behaviour.gd" id="17_fulsm"]
 [ext_resource type="Texture2D" uid="uid://cygifhqdakjln" path="res://sprites/items/blur.png" id="17_ke2ow"]
-[ext_resource type="Texture2D" path="res://sprites/items/WhatsApp_Image_2026-07-23_at_11.36.17_AM-removebg-preview.png" id="18_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://k6jlnk0b0qkf" path="res://sprites/items/centrat.png" id="18_ujl30"]
 [ext_resource type="Texture2D" uid="uid://dgb14w6lciw5i" path="res://sprites/items/creier2.png" id="19_31cv2"]
 [ext_resource type="Texture2D" uid="uid://v7as634tvbep" path="res://sprites/items/mana.png" id="20_pf23h"]
 [ext_resource type="Texture2D" uid="uid://cdvix56rn33ca" path="res://sprites/items/shake.png" id="21_dt7fs"]
 [ext_resource type="Texture2D" uid="uid://x8qv2g5vcog" path="res://sprites/items/picior.png" id="22_wqfne"]
 [ext_resource type="Texture2D" uid="uid://phu4pwrbv30n" path="res://sprites/items/somn.png" id="23_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://explth83i7ng" path="res://sprites/items/nutsandbolts1.png" id="25_pf23h"]
+[ext_resource type="Texture2D" uid="uid://cwkbajnqyysc6" path="res://sprites/items/nutsandbolts2.png" id="26_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://dd8gjv1vtmaym" path="res://sprites/items/wire.png" id="27_wqfne"]
+[ext_resource type="Texture2D" uid="uid://dcba0slsl6sga" path="res://sprites/items/pixil-frame-0 (26).png" id="28_pf23h"]
+[ext_resource type="Texture2D" uid="uid://dvbhfkgkucj83" path="res://sprites/items/mask.png" id="29_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://drae065fxlae8" path="res://sprites/items/suit.png" id="30_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://cxa2ylw5loc0a" path="res://sprites/items/manarobotica.png" id="31_487ah"]
+[ext_resource type="Texture2D" uid="uid://6852h63jed51" path="res://sprites/items/piciorrobotic.png" id="32_gl8cc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
-size = Vector2(64, 190)
+size = Vector2(64, 139)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl8cc"]
+radius = 125.67418
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 110.01818
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl8cc"]
+size = Vector2(56.5, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("3_ur7pv")
@@ -229,14 +242,45 @@ texture = ExtResource("22_wqfne")
 texture = ExtResource("23_wnwbv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8ls1"]
-texture = ExtResource("18_4r5pv")
+texture = ExtResource("25_pf23h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2b1d"]
+texture = ExtResource("26_dt7fs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cs1tg"]
+texture = ExtResource("27_wqfne")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dvfe"]
+texture = ExtResource("28_pf23h")
+region_rect = Rect2(27, 153, 176, 303)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_giy8y"]
+texture = ExtResource("29_wnwbv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdfoy"]
+texture = ExtResource("30_gl8cc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhpqf"]
+texture = ExtResource("31_487ah")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5jhy"]
+texture = ExtResource("32_gl8cc")
 
 [node name="Player" type="CharacterBody2D" unique_id=1133095281 groups=["player"]]
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_3vyb7")
 
 [node name="PlayerBody" type="CollisionShape2D" parent="." unique_id=1412975121]
-position = Vector2(10, -40)
+position = Vector2(10, -14.5)
 shape = SubResource("RectangleShape2D_fjrip")
+
+[node name="PlayerInteractionZone" type="Area2D" parent="." unique_id=144758591]
+collision_layer = 0
+collision_mask = 4
+
+[node name="PlayerInteractionZoneHitBox" type="CollisionShape2D" parent="PlayerInteractionZone" unique_id=863551797]
+shape = SubResource("CircleShape2D_gl8cc")
 
 [node name="PlayerPickupZone" type="Area2D" parent="." unique_id=827241232]
 collision_layer = 0
@@ -246,6 +290,13 @@ collision_mask = 2
 position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_qhqgy")
 debug_color = Color(0.380136, 0.59707314, 0.4083551, 0.41960785)
+
+[node name="PlayerHitBox" type="Area2D" parent="." unique_id=1377085553]
+
+[node name="HitBox" type="CollisionShape2D" parent="PlayerHitBox" unique_id=2047769356]
+position = Vector2(5, 29)
+shape = SubResource("RectangleShape2D_gl8cc")
+debug_color = Color(0.76390666, 0.36645108, 0.67729676, 0.41960785)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1882499560]
 position_smoothing_enabled = true
@@ -306,185 +357,246 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BlurContainerUI" unique_id=1484991231]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_gl8cc")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BlurContainerUI" unique_id=1273354149]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="BreatheContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=749300503]
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BreatheContainerUI" unique_id=282030048]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_487ah")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BreatheContainerUI" unique_id=2008183235]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="BrainContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=773345977]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BrainContainerUI" unique_id=917060965]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_md1ol")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BrainContainerUI" unique_id=1208614910]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="HandContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=276280860]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/HandContainerUI" unique_id=762255862]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_bj30b")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/HandContainerUI" unique_id=1923652492]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="ShakeContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=1297595122]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/ShakeContainerUI" unique_id=2096663711]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_jc3p3")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/ShakeContainerUI" unique_id=1421383635]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="LegContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=2109593776]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/LegContainerUI" unique_id=919408427]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_hax0n")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/LegContainerUI" unique_id=266657991]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="SleepContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=1454849162]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/SleepContainerUI" unique_id=521477198]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_t4otl")
 
 [node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/SleepContainerUI" unique_id=479646679]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+script = ExtResource("17_fulsm")
 
 [node name="ItemsEquipmentContainerUI" type="VBoxContainer" parent="PlayerCanvas" unique_id=502276499]
-visible = false
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
+anchor_bottom = 0.5
 offset_left = -40.0
-offset_bottom = 239.0
+offset_top = -138.0
+offset_bottom = 138.0
 grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=524942990]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer" unique_id=1666838036]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer" unique_id=606661168]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_a8ls1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1614060644]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer2" unique_id=1999745889]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer2" unique_id=1637939259]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_j2b1d")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=903131709]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer3" unique_id=1242365886]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer3" unique_id=1209307551]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_cs1tg")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1043513549]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer4" unique_id=355431570]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer4" unique_id=1432675853]
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dvfe")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1580245802]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer5" unique_id=1357774050]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer5" unique_id=1972038127]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_giy8y")
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1554122746]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer6" unique_id=369511118]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer6" unique_id=2062962427]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_fdfoy")
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=577965416]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer7" unique_id=190674467]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer7" unique_id=864027340]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_hhpqf")
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=893119329]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer8" unique_id=1089022765]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "0"
 script = ExtResource("17_fulsm")
 
 [node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer8" unique_id=1398068233]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_g5jhy")
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=2098912633]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer9" unique_id=391971844]
-layout_mode = 2
-script = ExtResource("17_fulsm")
-
-[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer9" unique_id=1623221923]
-layout_mode = 2
-
+[connection signal="area_entered" from="PlayerInteractionZone" to="." method="_on_player_interaction_zone_area_entered"]
+[connection signal="area_exited" from="PlayerInteractionZone" to="." method="_on_player_interaction_zone_area_exited"]
 [connection signal="area_entered" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_entered"]
 [connection signal="area_exited" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_exited"]
 [connection signal="animation_finished" from="PlayerAnimations" to="." method="_on_player_animations_animation_finished"]

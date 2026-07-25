@@ -1,0 +1,44 @@
+extends Button
+
+var base_text:String
+var glow_material: ShaderMaterial
+var font_material:FontFile=preload("res://fonts/BlackOpsOne-Regular.ttf")
+var hover_sound:AudioStreamMP3=preload("res://SFX/master_of_dreams_woosh_sounds_4_978.mp3")
+
+func _ready():
+	base_text=text
+	glow_material=material as ShaderMaterial
+	var green=Color(0.514, 1.0, 0.6, 1.0)
+	add_theme_color_override("font_color",green)
+	add_theme_color_override("font_hover_color",green)
+	add_theme_color_override("font_focus_color",green)
+	add_theme_color_override("font_pressed_color",green)
+	add_theme_font_override("font",font_material)
+	mouse_entered.connect(on_hover)
+	mouse_exited.connect(on_unhover)
+	focus_entered.connect(on_hover)
+	focus_exited.connect(on_unhover)
+	glow_material.set_shader_parameter("glow_strength",0.0)
+
+func on_hover():
+	var player:=AudioStreamPlayer.new()
+	player.bus="SFX"
+	player.stream=hover_sound
+	player.volume_db=-42
+	add_child(player)
+	player.play()
+	player.finished.connect(player.queue_free)
+	text="[  "+base_text+"  ]"
+	var tween=create_tween()
+	tween.tween_method(set_glow_strength,get_glow_strength(),2.0,0.2)
+
+func on_unhover():
+	text=base_text
+	var tween=create_tween()
+	tween.tween_method(set_glow_strength,get_glow_strength(),0.0,0.2)
+
+func set_glow_strength(value: float):
+	glow_material.set_shader_parameter("glow_strength",value)
+
+func get_glow_strength() -> float:
+	return glow_material.get_shader_parameter("glow_strength")

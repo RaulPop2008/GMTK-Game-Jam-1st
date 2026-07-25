@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cacr2k1dhvsef"]
+
+[ext_resource type="Texture2D" uid="uid://ddjpb44o17j6x" path="res://sprites/acidpool.png" id="1_ftlk3"]
+
+[node name="AcidPool" type="Area2D" unique_id=1733966487]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2020707600]
+polygon = PackedVector2Array(101, 93, 160, 57, 204, 48, 224, 32, 204, 3, 230, -11, 220, -28, 130, -35, 128, -54, 145, -62, 42, -71, 46, -81, -44, -84, -96, -72, -182, -60, -166, -46, -205, -5, -200, 18, -98, 38, -88, 55, 2, 57)
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1095777310]
+texture = ExtResource("1_ftlk3")

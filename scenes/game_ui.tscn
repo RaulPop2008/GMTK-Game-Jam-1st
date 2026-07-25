@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://74lte7npn6ek" path="res://scripts/save_button_ui.gd" id="13_g2v8e"]
 [ext_resource type="Texture2D" uid="uid://cd027sjih3x1b" path="res://sprites/pixil-frame-0 (23).png" id="13_ihktq"]
 [ext_resource type="Script" uid="uid://dsi3bwnichnsf" path="res://scripts/go_back_button_special_ui.gd" id="16_ihktq"]
+[ext_resource type="Texture2D" uid="uid://bjqfgfn1yl1sh" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.23_PM.jpeg" id="18_x8pta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igvt4"]
 texture = ExtResource("2_ihktq")
@@ -427,8 +428,8 @@ shader_parameter/glow_size = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8i0qq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upmhx"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj1yn"]
+texture = ExtResource("18_x8pta")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bj1rn"]
 shader = ExtResource("5_3huio")
@@ -1179,6 +1180,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../../LeftTrashButtonUI")
 focus_neighbor_right = NodePath("../../GoBackButtonSpecialUI")
+theme_override_colors/font_color = Color(0.5137255, 1, 0.6, 1)
+theme_override_fonts/font = ExtResource("2_s2npe")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2yflp")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_n74c5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wbo4m")
@@ -1227,6 +1230,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../../GoBackButtonSpecialUI")
 focus_neighbor_right = NodePath("../../RightTrashButtonUI")
+theme_override_colors/font_color = Color(0.5137255, 1, 0.6, 1)
+theme_override_fonts/font = ExtResource("2_s2npe")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bhxtc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qleia")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vvx0m")
@@ -1261,15 +1266,9 @@ expand_icon = true
 visible = false
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -75.0
-offset_right = 200.0
-offset_bottom = 75.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_left = NodePath("Panel/EnsureMenuContainerUI/OptionsContainerUI/YesButtonUI")
@@ -1277,14 +1276,21 @@ focus_neighbor_right = NodePath("Panel/EnsureMenuContainerUI/OptionsContainerUI/
 
 [node name="Panel" type="Panel" parent="EnsureMenuUI" unique_id=1272084629]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_upmhx")
+theme_override_styles/panel = SubResource("StyleBoxTexture_gj1yn")
 
 [node name="EnsureMenuContainerUI" type="VBoxContainer" parent="EnsureMenuUI/Panel" unique_id=1675157865]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 35.0
-offset_right = 295.0
-offset_bottom = 114.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.5
+offset_top = -39.5
+offset_right = 95.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 25

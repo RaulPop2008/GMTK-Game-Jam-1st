@@ -30,6 +30,11 @@ func save_game(slot: int = current_slot) -> void:
 		"has_arm": player.has_arm,
 		"has_leg": player.has_leg,
 
+		"mask": player.mask,
+		"suit": player.suit,
+		"arm": player.arm,
+		"leg": player.leg,
+
 		"has_debuff_brain": player.has_debuff_brain,
 		"has_debuff_leg": player.has_debuff_leg,
 		"has_debuff_hand": player.has_debuff_hand,
@@ -91,6 +96,11 @@ func apply_save_to_player(data: Dictionary) -> void:
 	player.has_suit = data["has_suit"]
 	player.has_arm = data["has_arm"]
 	player.has_leg = data["has_leg"]
+
+	player.mask = data["mask"]
+	player.suit = data["suit"]
+	player.arm = data["arm"]
+	player.leg = data["leg"]
 
 	player.has_debuff_brain = data["has_debuff_brain"]
 	player.has_debuff_leg = data["has_debuff_leg"]
