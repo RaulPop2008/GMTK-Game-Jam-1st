@@ -1,45 +1,81 @@
 extends CharacterBody2D
 
 signal item_pickup(item_name:String)
+signal item_count(nut:int,bolt:int,cable:int,batterie:int)
 
-const MOVEMENT_SPEED = 450.0
+const MOVEMENT_SPEED=450
+const AGE_INCREASE_REQUIREMENT=292
 
 var is_paused:bool=false
-var facing_direction:int=2
 var pause_menu_open:bool=false
 var can_pickup:bool=false
 var item_name:String
-var Nuts:int=0
-var Bolts:int=0
-var Cables:int
+
 var new_animation:String
 var current_animation:String
 var can_do:bool=true
 var can_move:bool=true
 var is_crouching:bool=false
 
+var nuts:int=0
+var bolts:int=0
+var cables:int
+var batteries:int=0
+var real_age:int=21
+var internal_age:int=21
+var has_mask:bool=false
+var has_suit:bool=false
+var has_arm:bool=false
+var has_leg:bool=false
+var has_debuff_brain:bool=false
+var has_debuff_leg:bool=false
+var has_debuff_hand:bool=false
+var has_debuff_vision:bool=false
+var has_debuff_sleepy:bool=false
+var has_debuff_breathing:bool=false
+var has_debuff_shaking:bool=false
+var debuff_brain_multiplier:float=1
+var debuff_leg_multiplier:float=1
+var debuff_hand_multiplier:float=1
+var debuff_vision_multiplier:float=1
+var debuff_sleepy_multiplier:float=1
+var debuff_breathing_multiplier:float=1
+var debuff_shaking_multiplier:float=1
+var collected_items:Array[String]
+
+var real_age_counter:float=0
+var internal_age_counter:float=0
+
+@onready var facing_direction:int=2
+@onready var pickup_sound:AudioStreamMP3=preload("res://SFX/little_robot_sound_factory_Pickup_00.mp3")
+
 func _physics_process(delta: float) -> void:
 	if can_do==true:
 		Inputs()
 		animation()
+		age_calculator(delta)
+	else:
+		velocity.x=0
+		velocity.y=0
+		$PlayerAnimations.animation="idle_down"
 	move_and_slide()
 
 func Inputs():
 ##----------------------------------------------------------
 ## MOVEMENT
 ##----------------------------------------------------------
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up") and can_move==true:
 		velocity.y=-MOVEMENT_SPEED
 		facing_direction=-2
-	elif Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("move_down") and can_move==true:
 		velocity.y=MOVEMENT_SPEED
 		facing_direction=2
 	else:
 		velocity.y=0
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") and can_move==true:
 		velocity.x=MOVEMENT_SPEED
 		facing_direction=1
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left") and can_move==true:
 		velocity.x=-MOVEMENT_SPEED
 		facing_direction=-1
 	else:
@@ -51,12 +87,25 @@ func Inputs():
 		item_pickup.emit(item_name)
 		can_move=false
 		is_crouching=true
-		if item_name=="NutItem":
-			Nuts+=1
-		if item_name=="BoltItem":
-			Bolts+=1
-	if Input.is_action_just_pressed("ui_cancel") and is_paused==false:
-		pass
+		if item_name.contains("NutItem"):
+			nuts+=1
+		if item_name.contains("BoltItem"):
+			bolts+=1
+		if item_name.contains("CablesItem"):
+			cables+=1
+		if item_name.contains("Batteriesitem"):
+			batteries+=1
+		if item_name not in collected_items:
+			collected_items.append(item_name)
+		await get_tree().create_timer(0.5).timeout
+		var player:=AudioStreamPlayer.new()
+		player.bus="SFX"
+		player.stream=pickup_sound
+		player.volume_db=-20
+		add_child(player)
+		player.play()
+		player.finished.connect(player.queue_free)
+		item_count.emit(nuts,bolts,cables,batteries)
 
 func animation():
 	if facing_direction==1 and is_crouching==true:
@@ -83,9 +132,23 @@ func animation():
 		current_animation="walk_down"
 	elif facing_direction==-2 and velocity.y!=0:
 		current_animation="walk_up"
+	elif is_paused==true:
+		current_animation="idle_down"
 	if current_animation!=new_animation:
 		new_animation=current_animation
 		$PlayerAnimations.play(new_animation)
+
+func age_calculator(delta:float):
+	$PlayerCanvas/AgeContainerUI/RealAgeLabelUI.text="Real Age: "+str(real_age)
+	$PlayerCanvas/AgeContainerUI/BodyAgeLabelUI.text="Body Internal Age: "+str(internal_age)
+	real_age_counter+=delta
+	internal_age_counter+=(delta*debuff_brain_multiplier*debuff_breathing_multiplier*debuff_hand_multiplier*debuff_leg_multiplier*debuff_shaking_multiplier*debuff_sleepy_multiplier*debuff_vision_multiplier)
+	if real_age_counter>=AGE_INCREASE_REQUIREMENT:
+		real_age_counter=0
+		real_age+=1
+	if internal_age_counter>=AGE_INCREASE_REQUIREMENT:
+		internal_age_counter=0
+		internal_age+=1
 
 func _on_player_pickup_zone_area_entered(area: Area2D) -> void:
 	can_pickup=true

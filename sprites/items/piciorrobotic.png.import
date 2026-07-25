@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8js1i8w6ue1"
-path="res://.godot/imported/WhatsApp_Image_2026-07-23_at_11.40.14_AM-removebg-preview.png-cce4090246811c30d102612615fe8ab2.ctex"
+uid="uid://6852h63jed51"
+path="res://.godot/imported/piciorrobotic.png-2fd5fdde7bb137fce1084ed1b2bd72d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/WhatsApp_Image_2026-07-23_at_11.40.14_AM-removebg-preview.png"
-dest_files=["res://.godot/imported/WhatsApp_Image_2026-07-23_at_11.40.14_AM-removebg-preview.png-cce4090246811c30d102612615fe8ab2.ctex"]
+source_file="res://sprites/items/piciorrobotic.png"
+dest_files=["res://.godot/imported/piciorrobotic.png-2fd5fdde7bb137fce1084ed1b2bd72d7.ctex"]
 
 [params]
 

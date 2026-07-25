@@ -15,6 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://y4fyqd7ffp2o" path="res://sprites/pixil-frame-0 (18).png" id="6_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://ce0sk550x75vn" path="res://sprites/picior2.png" id="7_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://8r8ww4n885hm" path="res://sprites/pixil-frame-0 (20).png" id="8_fulsm"]
+[ext_resource type="FontFile" uid="uid://b6qrw8p75x5hg" path="res://fonts/BlackOpsOne-Regular.ttf" id="16_a8ls1"]
+[ext_resource type="Script" uid="uid://bbhqjxuupfty1" path="res://scripts/player_label_behaviour.gd" id="17_fulsm"]
+[ext_resource type="Texture2D" uid="uid://cygifhqdakjln" path="res://sprites/items/blur.png" id="17_ke2ow"]
+[ext_resource type="Texture2D" path="res://sprites/items/WhatsApp_Image_2026-07-23_at_11.36.17_AM-removebg-preview.png" id="18_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://k6jlnk0b0qkf" path="res://sprites/items/centrat.png" id="18_ujl30"]
+[ext_resource type="Texture2D" uid="uid://dgb14w6lciw5i" path="res://sprites/items/creier2.png" id="19_31cv2"]
+[ext_resource type="Texture2D" uid="uid://v7as634tvbep" path="res://sprites/items/mana.png" id="20_pf23h"]
+[ext_resource type="Texture2D" uid="uid://cdvix56rn33ca" path="res://sprites/items/shake.png" id="21_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://x8qv2g5vcog" path="res://sprites/items/picior.png" id="22_wqfne"]
+[ext_resource type="Texture2D" uid="uid://phu4pwrbv30n" path="res://sprites/items/somn.png" id="23_wnwbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(64, 190)
@@ -197,7 +207,31 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1133095281]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gl8cc"]
+texture = ExtResource("17_ke2ow")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_487ah"]
+texture = ExtResource("18_ujl30")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_md1ol"]
+texture = ExtResource("19_31cv2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bj30b"]
+texture = ExtResource("20_pf23h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jc3p3"]
+texture = ExtResource("21_dt7fs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hax0n"]
+texture = ExtResource("22_wqfne")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4otl"]
+texture = ExtResource("23_wnwbv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8ls1"]
+texture = ExtResource("18_4r5pv")
+
+[node name="Player" type="CharacterBody2D" unique_id=1133095281 groups=["player"]]
 script = ExtResource("1_3vyb7")
 
 [node name="PlayerBody" type="CollisionShape2D" parent="." unique_id=1412975121]
@@ -229,6 +263,227 @@ drag_bottom_margin = 0.08
 position = Vector2(1, -61)
 sprite_frames = SubResource("SpriteFrames_a38lo")
 animation = &"crouch_up"
+
+[node name="PlayerCanvas" type="CanvasLayer" parent="." unique_id=359650789]
+
+[node name="AgeContainerUI" type="VBoxContainer" parent="PlayerCanvas" unique_id=654292763]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -68.0
+offset_right = 249.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="RealAgeLabelUI" type="Label" parent="PlayerCanvas/AgeContainerUI" unique_id=1773735667]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("16_a8ls1")
+theme_override_font_sizes/font_size = 25
+text = "Real Age:"
+
+[node name="BodyAgeLabelUI" type="Label" parent="PlayerCanvas/AgeContainerUI" unique_id=10678255]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("16_a8ls1")
+theme_override_font_sizes/font_size = 25
+text = "Body Internal Age:"
+
+[node name="DebuffsContainerUI" type="VBoxContainer" parent="PlayerCanvas" unique_id=44737702]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+
+[node name="BlurContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=1263083475]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BlurContainerUI" unique_id=1484991231]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_gl8cc")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BlurContainerUI" unique_id=1273354149]
+layout_mode = 2
+
+[node name="BreatheContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=749300503]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BreatheContainerUI" unique_id=282030048]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_487ah")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BreatheContainerUI" unique_id=2008183235]
+layout_mode = 2
+
+[node name="BrainContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=773345977]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/BrainContainerUI" unique_id=917060965]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_md1ol")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/BrainContainerUI" unique_id=1208614910]
+layout_mode = 2
+
+[node name="HandContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=276280860]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/HandContainerUI" unique_id=762255862]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_bj30b")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/HandContainerUI" unique_id=1923652492]
+layout_mode = 2
+
+[node name="ShakeContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=1297595122]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/ShakeContainerUI" unique_id=2096663711]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_jc3p3")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/ShakeContainerUI" unique_id=1421383635]
+layout_mode = 2
+
+[node name="LegContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=2109593776]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/LegContainerUI" unique_id=919408427]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_hax0n")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/LegContainerUI" unique_id=266657991]
+layout_mode = 2
+
+[node name="SleepContainerUI" type="HBoxContainer" parent="PlayerCanvas/DebuffsContainerUI" unique_id=1454849162]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/DebuffsContainerUI/SleepContainerUI" unique_id=521477198]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_t4otl")
+
+[node name="Label" type="Label" parent="PlayerCanvas/DebuffsContainerUI/SleepContainerUI" unique_id=479646679]
+layout_mode = 2
+
+[node name="ItemsEquipmentContainerUI" type="VBoxContainer" parent="PlayerCanvas" unique_id=502276499]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 239.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=524942990]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer" unique_id=1666838036]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer" unique_id=606661168]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a8ls1")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1614060644]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer2" unique_id=1999745889]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer2" unique_id=1637939259]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=903131709]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer3" unique_id=1242365886]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer3" unique_id=1209307551]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1043513549]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer4" unique_id=355431570]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer4" unique_id=1432675853]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1580245802]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer5" unique_id=1357774050]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer5" unique_id=1972038127]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=1554122746]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer6" unique_id=369511118]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer6" unique_id=2062962427]
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=577965416]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer7" unique_id=190674467]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer7" unique_id=864027340]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=893119329]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer8" unique_id=1089022765]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer8" unique_id=1398068233]
+layout_mode = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PlayerCanvas/ItemsEquipmentContainerUI" unique_id=2098912633]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer9" unique_id=391971844]
+layout_mode = 2
+script = ExtResource("17_fulsm")
+
+[node name="Panel" type="Panel" parent="PlayerCanvas/ItemsEquipmentContainerUI/HBoxContainer9" unique_id=1623221923]
+layout_mode = 2
 
 [connection signal="area_entered" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_entered"]
 [connection signal="area_exited" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_exited"]

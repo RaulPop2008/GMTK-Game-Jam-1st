@@ -1,10 +1,10 @@
 extends Control
 
-@onready var resolution_options: OptionButton = $DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI/ResolutionOptionsUI
-@onready var framecap_options: OptionButton = $DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI/FrameCapOptionsUI
-@onready var fullscreen_options: OptionButton = $DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI/FullScreenOptionsUI
-@onready var vsync_checkbutton: CheckButton = $DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI/VSyncCheckButtonUI
-@onready var reset_defaults_button: Button = $DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResetDefaultsButtonUI
+@onready var resolution_options: OptionButton=$VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI/ResolutionOptionsUI
+@onready var framecap_options: OptionButton=$VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI/FrameCapOptionsUI
+@onready var fullscreen_options: OptionButton=$VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI/FullScreenOptionsUI
+@onready var vsync_checkbutton: CheckButton=$VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI/VSyncCheckButtonUI
+@onready var reset_defaults_button: Button=$VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResetDefaultsButtonUI
 
 func _ready():
 	populate_dropdowns()

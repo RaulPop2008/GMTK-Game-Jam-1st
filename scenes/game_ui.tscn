@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://wnkfwbx7wayr"]
 
+[ext_resource type="Script" uid="uid://c4x758k0ob4hf" path="res://scripts/game_ui.gd" id="1_igvt4"]
 [ext_resource type="Shader" uid="uid://bpdpyiblrbqt5" path="res://scripts/button_glow.gdshader" id="1_rns2u"]
-[ext_resource type="Script" uid="uid://dbjxaxo16mfrn" path="res://scripts/game_ui.gd" id="1_u001w"]
 [ext_resource type="Script" uid="uid://caleawjpb7xj1" path="res://scripts/button_behaviour.gd" id="1_yubou"]
+[ext_resource type="Texture2D" uid="uid://4mj81owsav3v" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.49.23_PM.jpeg" id="2_ihktq"]
 [ext_resource type="FontFile" uid="uid://ymx6ftxg5n7m" path="res://fonts/SpecialElite-Regular.ttf" id="2_s2npe"]
 [ext_resource type="FontFile" uid="uid://cp0oillu350yo" path="res://fonts/BROKEN15.TTF" id="3_s2npe"]
 [ext_resource type="Shader" uid="uid://ma5q08qsq75d" path="res://scripts/label_glow.gdshader" id="4_u2dgd"]
@@ -11,6 +12,14 @@
 [ext_resource type="Script" uid="uid://demupxd62460x" path="res://scripts/video_menu_ui.gd" id="5_sjwyb"]
 [ext_resource type="Script" uid="uid://b74u76t88lct3" path="res://scripts/label_behaviour.gd" id="6_sjwyb"]
 [ext_resource type="FontFile" uid="uid://bbwhb0e0mfweh" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="8_g2v8e"]
+[ext_resource type="Texture2D" uid="uid://dfdqr5j6idfsc" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.09_PM.jpeg" id="8_igvt4"]
+[ext_resource type="Texture2D" uid="uid://bfnq3s17psxui" path="res://sprites/trash-can (1).png" id="12_upmhx"]
+[ext_resource type="Script" uid="uid://74lte7npn6ek" path="res://scripts/save_button_ui.gd" id="13_g2v8e"]
+[ext_resource type="Texture2D" uid="uid://cd027sjih3x1b" path="res://sprites/pixil-frame-0 (23).png" id="13_ihktq"]
+[ext_resource type="Script" uid="uid://dsi3bwnichnsf" path="res://scripts/go_back_button_special_ui.gd" id="16_ihktq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igvt4"]
+texture = ExtResource("2_ihktq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h8a34"]
 shader = ExtResource("5_3huio")
@@ -59,6 +68,9 @@ shader = ExtResource("1_rns2u")
 shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
 shader_parameter/glow_strength = 5.0
 shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x8pta"]
+texture = ExtResource("8_igvt4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbo4m"]
 shader = ExtResource("5_3huio")
@@ -120,7 +132,8 @@ shader_parameter/glow_size = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dnje"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kaiv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upmhx"]
+texture = ExtResource("2_ihktq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1kaiv"]
 shader = ExtResource("5_3huio")
@@ -130,8 +143,8 @@ shader_parameter/glow_size = 2.0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_upmhx"]
 color = Color(0.514, 1, 0.6, 1)
-grow_begin = 90.0
-grow_end = 90.0
+grow_begin = 80.0
+grow_end = 80.0
 thickness = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_igvt4"]
@@ -171,6 +184,9 @@ shader_parameter/glow_size = 3.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32nla"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8a34"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rmtt"]
+texture = ExtResource("8_igvt4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qleia"]
 shader = ExtResource("5_3huio")
@@ -235,6 +251,9 @@ shader_parameter/glow_size = 3.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htplj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mhso"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dnje"]
+texture = ExtResource("8_igvt4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vt4k1"]
 shader = ExtResource("5_3huio")
@@ -304,14 +323,159 @@ shader_parameter/glow_size = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sceap"]
 
-[node name="GameUI" type="Control" unique_id=256607927 groups=["pause_request"]]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lab56"]
+texture = ExtResource("8_igvt4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lab56"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5kjus"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt4k1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hh2gf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2yrn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1eyn1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbdak"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rmtt"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_upmhx"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yflp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n74c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbo4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfun4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27ch3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj1yn"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3458y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ro11t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcyh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okg68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw2o2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dnje"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8pta"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhxtc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qleia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vvx0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptl2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsbho"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_igvt4"]
+load_path = "res://.godot/imported/pixil-frame-0 (23).png-88f004bf17ab46c989dea6f67e6eba19.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3xai"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcmk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enbds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyd5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ibmi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8i0qq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upmhx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bj1rn"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36vcn"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2nex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_800i5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kvjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3x4h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2apu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5v8bm"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_051a8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5ln1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsh0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr1gc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75ntp"]
+
+[node name="GameUI" type="Control" unique_id=256607927]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u001w")
+script = ExtResource("1_igvt4")
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenuUI" type="MarginContainer" parent="." unique_id=1732813022]
@@ -321,6 +485,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MainBackgroundUI" type="Panel" parent="MainMenuUI" unique_id=1174043225]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_igvt4")
 
 [node name="MainContainerUI" type="VBoxContainer" parent="MainMenuUI" unique_id=1481688505]
 layout_mode = 2
@@ -419,6 +587,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CreditsBackgroundUI" type="Panel" parent="CreditsMenuUI" unique_id=551318461]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x8pta")
 
 [node name="CreditsContainerUI" type="VBoxContainer" parent="CreditsMenuUI" unique_id=1556551526]
 layout_mode = 2
@@ -519,11 +691,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DarkPanelUI" type="Panel" parent="OptionsMenuUI" unique_id=1253905291]
+[node name="OptionsBackground" type="Panel" parent="OptionsMenuUI" unique_id=1253905291]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_1kaiv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_upmhx")
 
-[node name="OptionsContainerUI" type="VBoxContainer" parent="OptionsMenuUI/DarkPanelUI" unique_id=89483667]
+[node name="OptionsContainerUI" type="VBoxContainer" parent="OptionsMenuUI/OptionsBackground" unique_id=89483667]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -540,14 +712,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 180
 
-[node name="AudioVideoContainerUI" type="VBoxContainer" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI" unique_id=1964673656]
+[node name="AudioVideoContainerUI" type="VBoxContainer" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI" unique_id=1964673656]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 35
 alignment = 1
 
-[node name="OptionsTitleUI" type="Label" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1301330638]
+[node name="OptionsTitleUI" type="Label" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI/AudioVideoContainerUI" unique_id=1301330638]
 material = SubResource("ShaderMaterial_1kaiv")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_s2npe")
@@ -557,11 +729,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_sjwyb")
 
-[node name="SeparationLineUI" type="Panel" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=897806297]
+[node name="SeparationLineUI" type="Panel" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI/AudioVideoContainerUI" unique_id=897806297]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_upmhx")
 
-[node name="AudioButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1097994723]
+[node name="AudioButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI/AudioVideoContainerUI" unique_id=1097994723]
 material = SubResource("ShaderMaterial_igvt4")
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -577,7 +749,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_36vcn")
 text = "Audio"
 script = ExtResource("1_yubou")
 
-[node name="VideoButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=298982677]
+[node name="VideoButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI/AudioVideoContainerUI" unique_id=298982677]
 material = SubResource("ShaderMaterial_2yflp")
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -593,7 +765,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_36vcn")
 text = "Video"
 script = ExtResource("1_yubou")
 
-[node name="GoBackButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI" unique_id=1753550765]
+[node name="GoBackButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackground/OptionsContainerUI" unique_id=1753550765]
 material = SubResource("ShaderMaterial_n74c5")
 layout_mode = 2
 focus_neighbor_top = NodePath("../AudioVideoContainerUI/VideoButtonUI")
@@ -616,11 +788,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_5kh4o")
 
-[node name="DarkPanelUI" type="Panel" parent="AudioMenuUI" unique_id=1047558674]
+[node name="AudioBackgroundUI" type="Panel" parent="AudioMenuUI" unique_id=1047558674]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_1kaiv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_2rmtt")
 
-[node name="AudioMenuContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI" unique_id=36793486]
+[node name="AudioMenuContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI" unique_id=36793486]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -637,7 +809,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 80
 
-[node name="AudioTitleUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1239123895]
+[node name="AudioTitleUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1239123895]
 material = SubResource("ShaderMaterial_qleia")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_s2npe")
@@ -647,22 +819,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_sjwyb")
 
-[node name="SeparationLineUI" type="Panel" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1261635891]
+[node name="SeparationLineUI" type="Panel" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1261635891]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_vvx0m")
 
-[node name="LabelBarsContainerUI" type="HBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=862990667]
+[node name="LabelBarsContainerUI" type="HBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=862990667]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 120
 
-[node name="LabelsContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=1059381318]
+[node name="LabelsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=1059381318]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
-[node name="MasterVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=2015006661]
+[node name="MasterVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=2015006661]
 material = SubResource("ShaderMaterial_ptl2c")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s2npe")
@@ -670,7 +842,7 @@ theme_override_font_sizes/font_size = 32
 text = "Master Volume:"
 script = ExtResource("6_sjwyb")
 
-[node name="MusicVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=336384278]
+[node name="MusicVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=336384278]
 material = SubResource("ShaderMaterial_lsbho")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s2npe")
@@ -678,7 +850,7 @@ theme_override_font_sizes/font_size = 32
 text = "Music Volume:"
 script = ExtResource("6_sjwyb")
 
-[node name="SoundVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=767547417]
+[node name="SoundVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=767547417]
 material = SubResource("ShaderMaterial_3458y")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s2npe")
@@ -686,12 +858,12 @@ theme_override_font_sizes/font_size = 32
 text = "SFX Volume:"
 script = ExtResource("6_sjwyb")
 
-[node name="BarsContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=382230199]
+[node name="BarsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=382230199]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="MasterVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=1831739815]
+[node name="MasterVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=1831739815]
 material = SubResource("ShaderMaterial_ro11t")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -701,7 +873,7 @@ focus_neighbor_bottom = NodePath("../MusicVolumeSliderUI")
 max_value = 1.0
 step = 0.1
 
-[node name="MusicVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=839221666]
+[node name="MusicVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=839221666]
 material = SubResource("ShaderMaterial_dcyh6")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -711,7 +883,7 @@ focus_neighbor_bottom = NodePath("../SFXVolumeSliderUI")
 max_value = 1.0
 step = 0.1
 
-[node name="SFXVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=41902125]
+[node name="SFXVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=41902125]
 material = SubResource("ShaderMaterial_okg68")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -721,7 +893,7 @@ focus_neighbor_bottom = NodePath("../../../GoBackButtonUI")
 max_value = 1.0
 step = 0.1
 
-[node name="GoBackButtonUI" type="Button" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1949474922]
+[node name="GoBackButtonUI" type="Button" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1949474922]
 material = SubResource("ShaderMaterial_fw2o2")
 layout_mode = 2
 focus_neighbor_top = NodePath("../LabelBarsContainerUI/BarsContainerUI/SFXVolumeSliderUI")
@@ -744,11 +916,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_sjwyb")
 
-[node name="DarkPanelUI" type="Panel" parent="VideoMenuUI" unique_id=32324933]
+[node name="VideoBackgroundUI" type="Panel" parent="VideoMenuUI" unique_id=32324933]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_1kaiv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_0dnje")
 
-[node name="VideoMenuContainerUI" type="VBoxContainer" parent="VideoMenuUI/DarkPanelUI" unique_id=1099146184]
+[node name="VideoMenuContainerUI" type="VBoxContainer" parent="VideoMenuUI/VideoBackgroundUI" unique_id=1099146184]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -758,14 +930,14 @@ grow_vertical = 2
 theme_override_constants/separation = 120
 alignment = 1
 
-[node name="VideoOptionsContainerUI" type="VBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI" unique_id=690078715]
+[node name="VideoOptionsContainerUI" type="VBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI" unique_id=690078715]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VideoTitleUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1733387075]
+[node name="VideoTitleUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1733387075]
 material = SubResource("ShaderMaterial_vt4k1")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_s2npe")
@@ -775,16 +947,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_sjwyb")
 
-[node name="SeparationLineUI" type="Panel" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=223288061]
+[node name="SeparationLineUI" type="Panel" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=223288061]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_hh2gf")
 
-[node name="ResolutionContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=746281039]
+[node name="ResolutionContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=746281039]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 140
 
-[node name="ResolutionLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=344001554]
+[node name="ResolutionLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=344001554]
 material = SubResource("ShaderMaterial_g2yrn")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -793,7 +965,7 @@ theme_override_font_sizes/font_size = 32
 text = "Resolution:"
 script = ExtResource("6_sjwyb")
 
-[node name="ResolutionOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=382719473]
+[node name="ResolutionOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=382719473]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -822,10 +994,10 @@ popup/item_8/id = 8
 popup/item_9/text = "1920 x 1080"
 popup/item_9/id = 9
 
-[node name="FrameCapContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=2101102544]
+[node name="FrameCapContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=2101102544]
 layout_mode = 2
 
-[node name="FrameCapLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=26534376]
+[node name="FrameCapLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=26534376]
 material = SubResource("ShaderMaterial_1eyn1")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -834,7 +1006,7 @@ theme_override_font_sizes/font_size = 32
 text = "Frame Rate Cap:"
 script = ExtResource("6_sjwyb")
 
-[node name="FrameCapOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=2061864963]
+[node name="FrameCapOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=2061864963]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -849,12 +1021,12 @@ popup/item_1/id = 1
 popup/item_2/text = "OFF"
 popup/item_2/id = 2
 
-[node name="FullScreenContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=442675250]
+[node name="FullScreenContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=442675250]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="FullScreenLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=433112885]
+[node name="FullScreenLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=433112885]
 material = SubResource("ShaderMaterial_mbdak")
 layout_mode = 2
 size_flags_horizontal = 3
@@ -863,7 +1035,7 @@ theme_override_font_sizes/font_size = 32
 text = "Fullscreen:"
 script = ExtResource("6_sjwyb")
 
-[node name="FullScreenOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1647121368]
+[node name="FullScreenOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1647121368]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -878,11 +1050,11 @@ popup/item_1/id = 1
 popup/item_2/text = "ON"
 popup/item_2/id = 2
 
-[node name="VSyncContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1433394645]
+[node name="VSyncContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1433394645]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VSyncLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=619741128]
+[node name="VSyncLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=619741128]
 material = SubResource("ShaderMaterial_b2nex")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -891,14 +1063,14 @@ theme_override_font_sizes/font_size = 32
 text = "V-Sync:"
 script = ExtResource("6_sjwyb")
 
-[node name="VSyncCheckButtonUI" type="CheckButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=1631964412]
+[node name="VSyncCheckButtonUI" type="CheckButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=1631964412]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../../FullScreenContainerUI/FullScreenOptionsUI")
 focus_neighbor_bottom = NodePath("../../ResetDefaultsButtonUI")
 
-[node name="ResetDefaultsButtonUI" type="Button" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=469698011]
+[node name="ResetDefaultsButtonUI" type="Button" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=469698011]
 material = SubResource("ShaderMaterial_800i5")
 layout_mode = 2
 focus_neighbor_top = NodePath("../VSyncContainerUI/VSyncCheckButtonUI")
@@ -912,7 +1084,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q5jrl")
 text = "Reset To Defaults"
 script = ExtResource("1_yubou")
 
-[node name="GoBackButtonUI" type="Button" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI" unique_id=1032018521]
+[node name="GoBackButtonUI" type="Button" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI" unique_id=1032018521]
 material = SubResource("ShaderMaterial_fvcmk")
 layout_mode = 2
 size_flags_horizontal = 4
@@ -925,3 +1097,244 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rxjsu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sceap")
 text = "Go Back"
 script = ExtResource("1_yubou")
+
+[node name="SavesMenuUI" type="MarginContainer" parent="." unique_id=587406800]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SavesBackgroundUI" type="Panel" parent="SavesMenuUI" unique_id=1997072490]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lab56")
+
+[node name="SavesMenuContainerUI" type="VBoxContainer" parent="SavesMenuUI" unique_id=716134573]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="SavesTitleUI" type="Label" parent="SavesMenuUI/SavesMenuContainerUI" unique_id=932107656]
+material = SubResource("ShaderMaterial_lab56")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s2npe")
+theme_override_font_sizes/font_size = 110
+text = "SAVES"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="SeparationLineUI" type="Panel" parent="SavesMenuUI/SavesMenuContainerUI" unique_id=548884141]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_upmhx")
+
+[node name="ButtonsContainerUI" type="HBoxContainer" parent="SavesMenuUI/SavesMenuContainerUI" unique_id=337603428]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="LeftTrashButtonUI" type="Button" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI" unique_id=1286511248]
+material = SubResource("ShaderMaterial_5kjus")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../RightTrashButtonUI")
+focus_neighbor_right = NodePath("../LeftSaveContainerUI/LeftSaveButtonUI")
+theme_override_colors/icon_normal_color = Color(0.5137255, 1, 0.6, 1)
+theme_override_colors/icon_focus_color = Color(0.70980394, 1, 0.74509805, 1)
+theme_override_colors/icon_hover_color = Color(0.70980394, 1, 0.74509805, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vt4k1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hh2gf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g2yrn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1eyn1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mbdak")
+icon = ExtResource("12_upmhx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LeftSaveContainerUI" type="VBoxContainer" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI" unique_id=868071378]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="LeftSaveLabelUI" type="Label" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/LeftSaveContainerUI" unique_id=328955744]
+material = SubResource("ShaderMaterial_2rmtt")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2npe")
+theme_override_font_sizes/font_size = 40
+text = "New Save"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="LeftSaveButtonUI" type="Button" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/LeftSaveContainerUI" unique_id=1908682819]
+material = SubResource("ShaderMaterial_upmhx")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../LeftTrashButtonUI")
+focus_neighbor_right = NodePath("../../GoBackButtonSpecialUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2yflp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n74c5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wbo4m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sfun4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_27ch3")
+icon = ExtResource("13_ihktq")
+autowrap_trim_flags = 0
+icon_alignment = 1
+script = ExtResource("13_g2v8e")
+
+[node name="GoBackButtonSpecialUI" type="Button" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI" unique_id=244384650]
+material = SubResource("ShaderMaterial_gj1yn")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../LeftSaveContainerUI/LeftSaveButtonUI")
+focus_neighbor_right = NodePath("../RightSaveContainerUI/RightSaveButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3458y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ro11t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dcyh6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_okg68")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fw2o2")
+text = "Go Back"
+script = ExtResource("16_ihktq")
+
+[node name="RightSaveContainerUI" type="VBoxContainer" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI" unique_id=875572033]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="RightSaveLabelUI" type="Label" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/RightSaveContainerUI" unique_id=779395934]
+material = SubResource("ShaderMaterial_0dnje")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2npe")
+theme_override_font_sizes/font_size = 40
+text = "New Save"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="RightSaveButtonUI" type="Button" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/RightSaveContainerUI" unique_id=1826997869]
+material = SubResource("ShaderMaterial_x8pta")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../GoBackButtonSpecialUI")
+focus_neighbor_right = NodePath("../../RightTrashButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bhxtc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qleia")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vvx0m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ptl2c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lsbho")
+icon = SubResource("CompressedTexture2D_igvt4")
+autowrap_trim_flags = 0
+icon_alignment = 1
+script = ExtResource("13_g2v8e")
+
+[node name="RightTrashButtonUI" type="Button" parent="SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI" unique_id=774218490]
+material = SubResource("ShaderMaterial_w3xai")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../RightSaveContainerUI/RightSaveButtonUI")
+focus_neighbor_right = NodePath("../LeftTrashButtonUI")
+theme_override_colors/icon_normal_color = Color(0.5137255, 1, 0.6, 1)
+theme_override_colors/icon_focus_color = Color(0.70980394, 1, 0.74509805, 1)
+theme_override_colors/icon_hover_color = Color(0.70980394, 1, 0.74509805, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fvcmk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_enbds")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tyd5f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ibmi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8i0qq")
+icon = ExtResource("12_upmhx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="EnsureMenuUI" type="MarginContainer" parent="." unique_id=2108006259]
+visible = false
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -75.0
+offset_right = 200.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("Panel/EnsureMenuContainerUI/OptionsContainerUI/YesButtonUI")
+focus_neighbor_right = NodePath("Panel/EnsureMenuContainerUI/OptionsContainerUI/YesButtonUI")
+
+[node name="Panel" type="Panel" parent="EnsureMenuUI" unique_id=1272084629]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_upmhx")
+
+[node name="EnsureMenuContainerUI" type="VBoxContainer" parent="EnsureMenuUI/Panel" unique_id=1675157865]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 35.0
+offset_right = 295.0
+offset_bottom = 114.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="QuestionLabelUI" type="Label" parent="EnsureMenuUI/Panel/EnsureMenuContainerUI" unique_id=1100512058]
+material = SubResource("ShaderMaterial_bj1rn")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2npe")
+theme_override_font_sizes/font_size = 30
+text = "Delete Save?"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="OptionsContainerUI" type="HBoxContainer" parent="EnsureMenuUI/Panel/EnsureMenuContainerUI" unique_id=1410338499]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="YesButtonUI" type="Button" parent="EnsureMenuUI/Panel/EnsureMenuContainerUI/OptionsContainerUI" unique_id=958528889]
+material = SubResource("ShaderMaterial_36vcn")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../NoButtonUI")
+focus_neighbor_right = NodePath("../NoButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b2nex")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_800i5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4kvjg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3x4h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d2apu")
+text = "YES"
+alignment = 0
+autowrap_trim_flags = 0
+expand_icon = true
+script = ExtResource("16_ihktq")
+
+[node name="NoButtonUI" type="Button" parent="EnsureMenuUI/Panel/EnsureMenuContainerUI/OptionsContainerUI" unique_id=1114122169]
+material = SubResource("ShaderMaterial_5v8bm")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../YesButtonUI")
+focus_neighbor_right = NodePath("../YesButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_051a8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w5ln1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dsh0n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hr1gc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_75ntp")
+text = "NO"
+alignment = 2
+autowrap_trim_flags = 0
+expand_icon = true
+script = ExtResource("16_ihktq")

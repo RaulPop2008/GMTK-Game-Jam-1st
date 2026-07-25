@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://r3alxonhuk5a"]
 
-[ext_resource type="Texture2D" uid="uid://dmxum7j23yc6l" path="res://sprites/Adobe_Express_-_file.png" id="1_55odr"]
+[ext_resource type="Texture2D" uid="uid://dmxum7j23yc6l" path="res://sprites/items/Adobe_Express_-_file.png" id="1_55odr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4e8ik"]
 radius = 20.0

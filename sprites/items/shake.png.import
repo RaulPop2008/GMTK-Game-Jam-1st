@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c74000pvpotjc"
-path="res://.godot/imported/gmtk3-removebg-preview.png-d938538641656f2a5304213bc7c3fbe7.ctex"
+uid="uid://cdvix56rn33ca"
+path="res://.godot/imported/shake.png-32109b2291d065f975904e437ebd1593.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gmtk3-removebg-preview.png"
-dest_files=["res://.godot/imported/gmtk3-removebg-preview.png-d938538641656f2a5304213bc7c3fbe7.ctex"]
+source_file="res://sprites/items/shake.png"
+dest_files=["res://.godot/imported/shake.png-32109b2291d065f975904e437ebd1593.ctex"]
 
 [params]
 

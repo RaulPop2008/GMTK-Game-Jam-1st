@@ -1,7 +1,7 @@
 extends Control
-@onready var master_slider:HSlider=$DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/MasterVolumeSliderUI
-@onready var music_slider:HSlider=$DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/MusicVolumeSliderUI
-@onready var sfx_slider:HSlider=$DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/SFXVolumeSliderUI
+@onready var master_slider:HSlider=$AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/MasterVolumeSliderUI
+@onready var music_slider:HSlider=$AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/MusicVolumeSliderUI
+@onready var sfx_slider:HSlider=$AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI/SFXVolumeSliderUI
 
 func _ready():
 	connect_signals()

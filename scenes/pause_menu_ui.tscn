@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cr0fuy60ompap"]
 
-[ext_resource type="Script" uid="uid://c5f2ko81ikwho" path="res://scripts/pause_menu_ui.gd" id="1_ba1dc"]
+[ext_resource type="Script" uid="uid://dfawnu4pegqme" path="res://scripts/pause_menu_ui.gd" id="1_shmv0"]
 [ext_resource type="Shader" uid="uid://bpdpyiblrbqt5" path="res://scripts/button_glow.gdshader" id="1_tvuuu"]
 [ext_resource type="Script" uid="uid://caleawjpb7xj1" path="res://scripts/button_behaviour.gd" id="2_ba1dc"]
 [ext_resource type="Shader" uid="uid://b2ljvtbhyn27g" path="res://scripts/label_glow_green.gdshader" id="4_donxt"]
@@ -9,10 +9,6 @@
 [ext_resource type="Script" uid="uid://osbv52j3dim8" path="res://scripts/audio_menu_ui.gd" id="7_qmmss"]
 [ext_resource type="FontFile" uid="uid://ymx6ftxg5n7m" path="res://fonts/SpecialElite-Regular.ttf" id="8_22ik4"]
 [ext_resource type="Script" uid="uid://demupxd62460x" path="res://scripts/video_menu_ui.gd" id="9_shmv0"]
-[ext_resource type="Texture2D" uid="uid://c74000pvpotjc" path="res://sprites/gmtk3-removebg-preview.png" id="10_qmmss"]
-[ext_resource type="Texture2D" uid="uid://clyfaitkat48a" path="res://sprites/WhatsApp_Image_2026-07-23_at_11.36.17_AM-removebg-preview.png" id="11_22ik4"]
-[ext_resource type="Texture2D" uid="uid://sxvvoov75f68" path="res://sprites/pixil-frame-0 (1).png" id="12_shmv0"]
-[ext_resource type="Texture2D" uid="uid://b0pi7o4o01dn5" path="res://sprites/WhatsApp_Image_2026-07-23_at_8.42.24_PM-removebg-preview.png" id="13_22ik4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qleia"]
 shader = ExtResource("1_tvuuu")
@@ -244,16 +240,13 @@ shader_parameter/glow_size = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2kj1"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kveqh"]
-load_path = "res://.godot/imported/pixil-frame-0 (5).png-6f158f690247b5872255cf2d0ec437a7.ctex"
-
 [node name="PauseMenuUI" type="MarginContainer" unique_id=378530491]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ba1dc")
+script = ExtResource("1_shmv0")
 
 [node name="DarkPanelUI" type="Panel" parent="." unique_id=399811117]
 visible = false
@@ -328,10 +321,10 @@ script = ExtResource("2_ba1dc")
 visible = false
 layout_mode = 2
 
-[node name="DarkPanelUI" type="Panel" parent="OptionsMenuUI" unique_id=1563075316]
+[node name="OptionsBackgroundUI" type="Panel" parent="OptionsMenuUI" unique_id=1563075316]
 layout_mode = 2
 
-[node name="OptionsContainerUI" type="VBoxContainer" parent="OptionsMenuUI/DarkPanelUI" unique_id=518072113]
+[node name="OptionsContainerUI" type="VBoxContainer" parent="OptionsMenuUI/OptionsBackgroundUI" unique_id=518072113]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -348,14 +341,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 180
 
-[node name="AudioVideoContainerUI" type="VBoxContainer" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI" unique_id=1185322208]
+[node name="AudioVideoContainerUI" type="VBoxContainer" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI" unique_id=1185322208]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 35
 alignment = 1
 
-[node name="OptionsTitleUI" type="Label" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=793705434]
+[node name="OptionsTitleUI" type="Label" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=793705434]
 material = SubResource("ShaderMaterial_kveqh")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_p8soi")
@@ -365,11 +358,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_qkcjt")
 
-[node name="SeparationLineUI" type="Panel" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1279281089]
+[node name="SeparationLineUI" type="Panel" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1279281089]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_uhc0e")
 
-[node name="AudioButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=2067405006]
+[node name="AudioButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=2067405006]
 material = SubResource("ShaderMaterial_u2r77")
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -385,7 +378,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5mf2a")
 text = "Audio"
 script = ExtResource("2_ba1dc")
 
-[node name="VideoButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1431434591]
+[node name="VideoButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI/AudioVideoContainerUI" unique_id=1431434591]
 material = SubResource("ShaderMaterial_fu6ld")
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -401,7 +394,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5mf2a")
 text = "Video"
 script = ExtResource("2_ba1dc")
 
-[node name="GoBackButtonUI" type="Button" parent="OptionsMenuUI/DarkPanelUI/OptionsContainerUI" unique_id=346389243]
+[node name="GoBackButtonUI" type="Button" parent="OptionsMenuUI/OptionsBackgroundUI/OptionsContainerUI" unique_id=346389243]
 material = SubResource("ShaderMaterial_wn0io")
 layout_mode = 2
 focus_neighbor_top = NodePath("../AudioVideoContainerUI/VideoButtonUI")
@@ -419,10 +412,10 @@ visible = false
 layout_mode = 2
 script = ExtResource("7_qmmss")
 
-[node name="DarkPanelUI" type="Panel" parent="AudioMenuUI" unique_id=1115476422]
+[node name="AudioBackgroundUI" type="Panel" parent="AudioMenuUI" unique_id=1115476422]
 layout_mode = 2
 
-[node name="AudioMenuContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI" unique_id=366282046]
+[node name="AudioMenuContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI" unique_id=366282046]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -439,7 +432,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 80
 
-[node name="AudioTitleUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1335480872]
+[node name="AudioTitleUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1335480872]
 material = SubResource("ShaderMaterial_hynkv")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_p8soi")
@@ -449,22 +442,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_qkcjt")
 
-[node name="SeparationLineUI" type="Panel" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1162933011]
+[node name="SeparationLineUI" type="Panel" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1162933011]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_nwinc")
 
-[node name="LabelBarsContainerUI" type="HBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=1198762077]
+[node name="LabelBarsContainerUI" type="HBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=1198762077]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 120
 
-[node name="LabelsContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=148066061]
+[node name="LabelsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=148066061]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
-[node name="MasterVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1159155372]
+[node name="MasterVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1159155372]
 material = SubResource("ShaderMaterial_bsovj")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_22ik4")
@@ -472,7 +465,7 @@ theme_override_font_sizes/font_size = 32
 text = "Master Volume:"
 script = ExtResource("6_qkcjt")
 
-[node name="MusicVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1169763456]
+[node name="MusicVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=1169763456]
 material = SubResource("ShaderMaterial_soa7f")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_22ik4")
@@ -480,7 +473,7 @@ theme_override_font_sizes/font_size = 32
 text = "Music Volume:"
 script = ExtResource("6_qkcjt")
 
-[node name="SoundVolumeLabelUI" type="Label" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=953859318]
+[node name="SoundVolumeLabelUI" type="Label" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/LabelsContainerUI" unique_id=953859318]
 material = SubResource("ShaderMaterial_lqqaa")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_22ik4")
@@ -488,12 +481,12 @@ theme_override_font_sizes/font_size = 32
 text = "SFX Volume:"
 script = ExtResource("6_qkcjt")
 
-[node name="BarsContainerUI" type="VBoxContainer" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=2012433085]
+[node name="BarsContainerUI" type="VBoxContainer" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI" unique_id=2012433085]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="MasterVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=532842788]
+[node name="MasterVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=532842788]
 material = SubResource("ShaderMaterial_4826m")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -503,7 +496,7 @@ focus_neighbor_bottom = NodePath("../MusicVolumeSliderUI")
 max_value = 1.0
 step = 0.1
 
-[node name="MusicVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=452684725]
+[node name="MusicVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=452684725]
 material = SubResource("ShaderMaterial_sl0xn")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -513,7 +506,7 @@ focus_neighbor_bottom = NodePath("../SFXVolumeSliderUI")
 max_value = 1.0
 step = 0.1
 
-[node name="SFXVolumeSliderUI" type="HSlider" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=94926028]
+[node name="SFXVolumeSliderUI" type="HSlider" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/LabelBarsContainerUI/BarsContainerUI" unique_id=94926028]
 material = SubResource("ShaderMaterial_2hvcl")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -523,7 +516,7 @@ focus_neighbor_bottom = NodePath("../../../GoBackButtonUI")
 max_value = 1.0
 step = 0.1
 
-[node name="GoBackButtonUI" type="Button" parent="AudioMenuUI/DarkPanelUI/AudioMenuContainerUI" unique_id=667295437]
+[node name="GoBackButtonUI" type="Button" parent="AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI" unique_id=667295437]
 material = SubResource("ShaderMaterial_w5xmw")
 layout_mode = 2
 focus_neighbor_top = NodePath("../LabelBarsContainerUI/BarsContainerUI/SFXVolumeSliderUI")
@@ -541,10 +534,10 @@ visible = false
 layout_mode = 2
 script = ExtResource("9_shmv0")
 
-[node name="DarkPanelUI" type="Panel" parent="VideoMenuUI" unique_id=817393435]
+[node name="VideoBackgroundUI" type="Panel" parent="VideoMenuUI" unique_id=817393435]
 layout_mode = 2
 
-[node name="VideoMenuContainerUI" type="VBoxContainer" parent="VideoMenuUI/DarkPanelUI" unique_id=1463781847]
+[node name="VideoMenuContainerUI" type="VBoxContainer" parent="VideoMenuUI/VideoBackgroundUI" unique_id=1463781847]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -554,14 +547,14 @@ grow_vertical = 2
 theme_override_constants/separation = 120
 alignment = 1
 
-[node name="VideoOptionsContainerUI" type="VBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI" unique_id=1126254993]
+[node name="VideoOptionsContainerUI" type="VBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI" unique_id=1126254993]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VideoTitleUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1284210128]
+[node name="VideoTitleUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1284210128]
 material = SubResource("ShaderMaterial_gfyta")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_p8soi")
@@ -571,16 +564,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_qkcjt")
 
-[node name="SeparationLineUI" type="Panel" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1618157266]
+[node name="SeparationLineUI" type="Panel" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1618157266]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_u3e20")
 
-[node name="ResolutionContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=118964136]
+[node name="ResolutionContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=118964136]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 140
 
-[node name="ResolutionLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=1664848847]
+[node name="ResolutionLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=1664848847]
 material = SubResource("ShaderMaterial_ikxox")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -589,7 +582,7 @@ theme_override_font_sizes/font_size = 32
 text = "Resolution:"
 script = ExtResource("6_qkcjt")
 
-[node name="ResolutionOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=754159832]
+[node name="ResolutionOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/ResolutionContainerUI" unique_id=754159832]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -618,10 +611,10 @@ popup/item_8/id = 8
 popup/item_9/text = "1920 x 1080"
 popup/item_9/id = 9
 
-[node name="FrameCapContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=96779782]
+[node name="FrameCapContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=96779782]
 layout_mode = 2
 
-[node name="FrameCapLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=511839296]
+[node name="FrameCapLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=511839296]
 material = SubResource("ShaderMaterial_x7f38")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -630,7 +623,7 @@ theme_override_font_sizes/font_size = 32
 text = "Frame Rate Cap:"
 script = ExtResource("6_qkcjt")
 
-[node name="FrameCapOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=857156226]
+[node name="FrameCapOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FrameCapContainerUI" unique_id=857156226]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -645,12 +638,12 @@ popup/item_1/id = 1
 popup/item_2/text = "OFF"
 popup/item_2/id = 2
 
-[node name="FullScreenContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1215496208]
+[node name="FullScreenContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1215496208]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="FullScreenLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1589429869]
+[node name="FullScreenLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1589429869]
 material = SubResource("ShaderMaterial_u1wuk")
 layout_mode = 2
 size_flags_horizontal = 3
@@ -659,7 +652,7 @@ theme_override_font_sizes/font_size = 32
 text = "Fullscreen:"
 script = ExtResource("6_qkcjt")
 
-[node name="FullScreenOptionsUI" type="OptionButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1449082525]
+[node name="FullScreenOptionsUI" type="OptionButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/FullScreenContainerUI" unique_id=1449082525]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -674,11 +667,11 @@ popup/item_1/id = 1
 popup/item_2/text = "ON"
 popup/item_2/id = 2
 
-[node name="VSyncContainerUI" type="HBoxContainer" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=810690455]
+[node name="VSyncContainerUI" type="HBoxContainer" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=810690455]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VSyncLabelUI" type="Label" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=739991850]
+[node name="VSyncLabelUI" type="Label" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=739991850]
 material = SubResource("ShaderMaterial_5tsw3")
 layout_mode = 2
 size_flags_horizontal = 2
@@ -687,14 +680,14 @@ theme_override_font_sizes/font_size = 32
 text = "V-Sync:"
 script = ExtResource("6_qkcjt")
 
-[node name="VSyncCheckButtonUI" type="CheckButton" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=511236801]
+[node name="VSyncCheckButtonUI" type="CheckButton" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI/VSyncContainerUI" unique_id=511236801]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../../FullScreenContainerUI/FullScreenOptionsUI")
 focus_neighbor_bottom = NodePath("../../ResetDefaultsButtonUI")
 
-[node name="ResetDefaultsButtonUI" type="Button" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1408200213]
+[node name="ResetDefaultsButtonUI" type="Button" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/VideoOptionsContainerUI" unique_id=1408200213]
 material = SubResource("ShaderMaterial_1w038")
 layout_mode = 2
 focus_neighbor_top = NodePath("../VSyncContainerUI/VSyncCheckButtonUI")
@@ -708,7 +701,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6irug")
 text = "Reset To Defaults"
 script = ExtResource("2_ba1dc")
 
-[node name="GoBackButtonUI" type="Button" parent="VideoMenuUI/DarkPanelUI/VideoMenuContainerUI" unique_id=1528703266]
+[node name="GoBackButtonUI" type="Button" parent="VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI" unique_id=1528703266]
 material = SubResource("ShaderMaterial_o8oum")
 layout_mode = 2
 size_flags_horizontal = 4
@@ -721,93 +714,3 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_wllci")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x2kj1")
 text = "Go Back"
 script = ExtResource("2_ba1dc")
-
-[node name="InventoryMenuUI" type="MarginContainer" parent="." unique_id=665676883]
-layout_mode = 2
-
-[node name="ContainerManagerUI" type="HBoxContainer" parent="InventoryMenuUI" unique_id=821939570]
-layout_mode = 2
-
-[node name="LeftSideContainerUI" type="VBoxContainer" parent="InventoryMenuUI/ContainerManagerUI" unique_id=243196511]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="ImageLineContainerUI" type="HBoxContainer" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI" unique_id=1956108679]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="BoltContainerUI" type="VBoxContainer" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI" unique_id=78641365]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 2
-
-[node name="BoltImageUI" type="TextureRect" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/BoltContainerUI" unique_id=766691300]
-custom_minimum_size = Vector2(120, 80)
-layout_mode = 2
-texture = ExtResource("10_qmmss")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="BoltLabelUI" type="Label" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/BoltContainerUI" unique_id=2102432537]
-layout_mode = 2
-horizontal_alignment = 1
-
-[node name="NutContainerUI" type="VBoxContainer" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI" unique_id=810436220]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 2
-
-[node name="NutImageUI" type="TextureRect" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/NutContainerUI" unique_id=1439540736]
-custom_minimum_size = Vector2(120, 80)
-layout_mode = 2
-texture = ExtResource("11_22ik4")
-expand_mode = 3
-stretch_mode = 5
-flip_v = true
-
-[node name="NutLabelUI" type="Label" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/NutContainerUI" unique_id=552830156]
-layout_mode = 2
-horizontal_alignment = 1
-
-[node name="CablesContainerUI" type="VBoxContainer" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI" unique_id=933629498]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 2
-
-[node name="CablesImageUI" type="TextureRect" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/CablesContainerUI" unique_id=1103211117]
-custom_minimum_size = Vector2(120, 80)
-layout_mode = 2
-texture = ExtResource("12_shmv0")
-expand_mode = 3
-stretch_mode = 5
-flip_h = true
-
-[node name="CablesLabelUI" type="Label" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/CablesContainerUI" unique_id=301163625]
-layout_mode = 2
-horizontal_alignment = 1
-
-[node name="BatteriesContainerUI" type="VBoxContainer" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI" unique_id=664351960]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 2
-
-[node name="BatteriesImageUI" type="TextureRect" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/BatteriesContainerUI" unique_id=2061514056]
-custom_minimum_size = Vector2(120, 80)
-layout_mode = 2
-texture = SubResource("CompressedTexture2D_kveqh")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="BatteriesLabelUI" type="Label" parent="InventoryMenuUI/ContainerManagerUI/LeftSideContainerUI/ImageLineContainerUI/BatteriesContainerUI" unique_id=1386314031]
-layout_mode = 2
-horizontal_alignment = 1
-
-[node name="WhatsAppImage20260723At8_42_24PmRemovebgPreview" type="Sprite2D" parent="." unique_id=1650539658]
-visible = false
-position = Vector2(960, 331)
-texture = ExtResource("13_22ik4")
