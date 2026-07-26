@@ -54,10 +54,10 @@ var has_mask:bool=false
 var has_suit:bool=false
 var has_arm:bool=false
 var has_leg:bool=false
-var mask:int=0
-var suit:int=0
-var arm:int=0
-var leg:int=0
+var mask:int=10
+var suit:int=10
+var arm:int=10
+var leg:int=10
 var has_debuff_brain:bool=false
 var has_debuff_leg:bool=false
 var has_debuff_hand:bool=false
@@ -445,4 +445,37 @@ func _on_player_animations_animation_finished() -> void:
 
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
 	if mask<1 or suit<1 or arm<1 or leg<1:
-		pass
+		$PlayerCanvas/DeathMenuUI.visible=true
+		$PlayerCanvas/DeathMenuUI/VBoxContainer/Label.visible=false
+		await get_tree().create_timer(1.5).timeout
+		$PlayerCanvas/DeathMenuUI/VBoxContainer/Label.visible=true
+		await get_tree().create_timer(3).timeout
+		SaveManager.delete_save(SaveManager.current_slot)
+		get_tree().change_scene_to_file("res://scenes/game_ui.tscn")
+
+func _on_player_hit_box_2_area_exited(area: Area2D) -> void:
+	if mask<1 or suit<1 or arm<1 or leg<1:
+		$PlayerCanvas/DeathMenuUI.visible=true
+		$PlayerCanvas/DeathMenuUI/VBoxContainer/Label.visible=false
+		await get_tree().create_timer(1.5).timeout
+		$PlayerCanvas/DeathMenuUI/VBoxContainer/Label.visible=true
+		await get_tree().create_timer(3).timeout
+		SaveManager.delete_save(SaveManager.current_slot)
+		get_tree().change_scene_to_file("res://scenes/game_ui.tscn")
+	else:
+		$PlayerCanvas/MainDeathUI.visible=true
+		await get_tree().create_timer(2.5).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="Hooooray!"
+		await get_tree().create_timer(2.5).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="Now You Can Ejnoy A Peacefull Life."
+		await get_tree().create_timer(2.5).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="Now...."
+		await get_tree().create_timer(2.5).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="DIE!!!"
+		await get_tree().create_timer(0.2).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="Go Enjoy Life!"
+		await get_tree().create_timer(2.5).timeout
+		$PlayerCanvas/MainDeathUI/Label.text="But It Refused."
+		await get_tree().create_timer(5).timeout
+		SaveManager.delete_save(SaveManager.current_slot)
+		get_tree().change_scene_to_file("res://scenes/game_ui.tscn")

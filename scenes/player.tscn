@@ -44,6 +44,9 @@ radius = 125.67418
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 129.062
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_md1ol"]
+radius = 32.01562
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_487ah"]
 radius = 32.01562
 
@@ -304,6 +307,15 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="HitBox" type="CollisionShape2D" parent="PlayerHitBox" unique_id=2047769356]
+position = Vector2(5, 29)
+shape = SubResource("CircleShape2D_md1ol")
+debug_color = Color(0.76390666, 0.36645108, 0.67729676, 0.41960785)
+
+[node name="PlayerHitBox2" type="Area2D" parent="." unique_id=68050010]
+collision_layer = 0
+collision_mask = 32
+
+[node name="HitBox" type="CollisionShape2D" parent="PlayerHitBox2" unique_id=466812517]
 position = Vector2(5, 29)
 shape = SubResource("CircleShape2D_487ah")
 debug_color = Color(0.76390666, 0.36645108, 0.67729676, 0.41960785)
@@ -614,6 +626,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_g5jhy")
 
+[node name="MainDeathUI" type="MarginContainer" parent="PlayerCanvas" unique_id=383695326]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerCanvas/MainDeathUI" unique_id=774180863]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="PlayerCanvas/MainDeathUI" unique_id=926844162]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("34_md1ol")
+theme_override_font_sizes/font_size = 50
+text = "You Made It!"
+
 [node name="DeathMenuUI" type="MarginContainer" parent="PlayerCanvas" unique_id=166383742]
 visible = false
 anchors_preset = 15
@@ -626,9 +657,24 @@ grow_vertical = 2
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="PlayerCanvas/DeathMenuUI" unique_id=1777634649]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerCanvas/DeathMenuUI" unique_id=1044510087]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="PlayerCanvas/DeathMenuUI/VBoxContainer" unique_id=2035508767]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("34_md1ol")
+theme_override_font_sizes/font_size = 50
+text = "You DIED"
+
+[node name="Label" type="Label" parent="PlayerCanvas/DeathMenuUI/VBoxContainer" unique_id=1777634649]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("34_md1ol")
 theme_override_font_sizes/font_size = 50
 text = "You Stepped In a Pool Of Acid Unequipped!"
@@ -638,4 +684,5 @@ text = "You Stepped In a Pool Of Acid Unequipped!"
 [connection signal="area_entered" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_entered"]
 [connection signal="area_exited" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_exited"]
 [connection signal="area_entered" from="PlayerHitBox" to="." method="_on_player_hit_box_area_entered"]
+[connection signal="area_exited" from="PlayerHitBox2" to="." method="_on_player_hit_box_2_area_exited"]
 [connection signal="animation_finished" from="PlayerAnimations" to="." method="_on_player_animations_animation_finished"]

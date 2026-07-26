@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ffrfxhs76nnr" path="res://sprites/lab1.png" id="6_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://bi8myha85bsik" path="res://sprites/AcidPoolHuge/2.png" id="6_ggc52"]
 [ext_resource type="PackedScene" uid="uid://cwsq5mrla3qur" path="res://scenes/batteries_item.tscn" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://bo5hfi4aepgj2" path="res://sprites/AcidPoolHuge/3.png" id="7_8u370"]
 [ext_resource type="PackedScene" uid="uid://cr0fuy60ompap" path="res://scenes/pause_menu_ui.tscn" id="7_i7141"]
 [ext_resource type="Texture2D" uid="uid://dhhbryn5wql15" path="res://sprites/AcidPoolHuge/4.png" id="7_l8ah6"]
 [ext_resource type="PackedScene" uid="uid://0cyj8ee86dgj" path="res://scenes/apartment.tscn" id="7_navra"]
@@ -20,15 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://c20wlgxsd1nxl" path="res://scenes/house_gray.tscn" id="8_luhhm"]
 [ext_resource type="Texture2D" uid="uid://bld7obikv6cd6" path="res://sprites/AcidPoolHuge/8.png" id="9_8u370"]
 [ext_resource type="PackedScene" uid="uid://3ks4s84amvxs" path="res://scenes/house_brown.tscn" id="9_fh13f"]
+[ext_resource type="Texture2D" uid="uid://dca6tj26lr6rn" path="res://sprites/AcidPoolHuge/6.png" id="9_ggc52"]
 [ext_resource type="Script" uid="uid://bbhqjxuupfty1" path="res://scripts/player_label_behaviour.gd" id="9_xo05s"]
 [ext_resource type="Script" uid="uid://bnmmdk4av30yy" path="res://scripts/craft_menu_ui.gd" id="10_ctatt"]
 [ext_resource type="Texture2D" uid="uid://b56yigcplsdb4" path="res://sprites/WhatsApp_Image_2026-07-25_at_8.45.06_PM.jpeg" id="10_kpybi"]
+[ext_resource type="Texture2D" uid="uid://ddk1ytdol488h" path="res://sprites/AcidPoolHuge/7.png" id="10_l8ah6"]
 [ext_resource type="Texture2D" uid="uid://devd8b85ms1n1" path="res://sprites/AcidPoolHuge/10.png" id="10_rga7q"]
-[ext_resource type="Texture2D" uid="uid://b7hslv5yei32t" path="res://sprites/AcidPoolHuge/11.png" id="11_6oujy"]
 [ext_resource type="Shader" uid="uid://bpdpyiblrbqt5" path="res://scripts/button_glow.gdshader" id="11_q5onr"]
 [ext_resource type="FontFile" uid="uid://b6qrw8p75x5hg" path="res://fonts/BlackOpsOne-Regular.ttf" id="12_lakw3"]
+[ext_resource type="Texture2D" uid="uid://bqaay8yrwcen5" path="res://sprites/AcidPoolHuge/9.png" id="13_rga7q"]
 [ext_resource type="Texture2D" uid="uid://cwkbajnqyysc6" path="res://sprites/items/nutsandbolts2.png" id="14_2lf6f"]
 [ext_resource type="Script" uid="uid://brfvlq36h0eft" path="res://scripts/button_behaviour_special.gd" id="14_ctatt"]
+[ext_resource type="Texture2D" uid="uid://brsc4sgbpmjcg" path="res://sprites/AcidPoolHuge/12.png" id="15_6oujy"]
 [ext_resource type="Texture2D" uid="uid://dd8gjv1vtmaym" path="res://sprites/items/wire.png" id="15_7iits"]
 [ext_resource type="Texture2D" uid="uid://ww4th4ugqnko" path="res://sprites/items/baterie.png" id="16_oo54l"]
 [ext_resource type="Texture2D" uid="uid://drae065fxlae8" path="res://sprites/items/suit.png" id="17_kpybi"]
@@ -10123,6 +10127,11 @@ position = Vector2(2874.001, -7063)
 scale = Vector2(5, 5)
 texture = ExtResource("2_xo05s")
 
+[node name="Iarba13" type="Sprite2D" parent="Dirt" unique_id=1623332259]
+position = Vector2(15054, 4499)
+scale = Vector2(5, 6.051999)
+texture = ExtResource("2_xo05s")
+
 [node name="TileMapGrass" type="TileMap" parent="." unique_id=1320417159]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_dss4m")
@@ -10149,40 +10158,69 @@ scale = Vector2(10, 10)
 texture = ExtResource("4_navra")
 
 [node name="1" type="Sprite2D" parent="Pools" unique_id=323354208]
-position = Vector2(-8926, -3405.0005)
-scale = Vector2(10, 10)
+position = Vector2(-11603, -3388.0002)
+scale = Vector2(15, 15)
 texture = ExtResource("5_817gm")
 
 [node name="2" type="Sprite2D" parent="Pools" unique_id=65131684]
-position = Vector2(-5296, -4555)
-scale = Vector2(10, 10)
+position = Vector2(-6159.0005, -5143.0005)
+scale = Vector2(15, 15)
 texture = ExtResource("6_ggc52")
 
+[node name="3" type="Sprite2D" parent="Pools" unique_id=1470089484]
+position = Vector2(-730.5, -4783.0005)
+scale = Vector2(15, 15)
+texture = ExtResource("7_8u370")
+metadata/_edit_group_ = true
+
 [node name="4" type="Sprite2D" parent="Pools" unique_id=413812407]
-position = Vector2(767.9999, -5578)
-scale = Vector2(10, 10)
+position = Vector2(4714.001, -4858)
+scale = Vector2(15, 15)
 texture = ExtResource("7_l8ah6")
+metadata/_edit_group_ = true
 
 [node name="5" type="Sprite2D" parent="Pools" unique_id=1819529343]
-position = Vector2(4398, -5608)
-scale = Vector2(10, 10)
+position = Vector2(10158.501, -4903.0005)
+scale = Vector2(15, 15)
 texture = ExtResource("8_e75v4")
+metadata/_edit_group_ = true
 
-[node name="8" type="Sprite2D" parent="Pools" unique_id=1436817430]
-visible = false
-position = Vector2(-4817.0015, -5659)
-scale = Vector2(10, 10)
+[node name="6" type="Sprite2D" parent="Pools" unique_id=130465064]
+position = Vector2(15587, -4573)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ggc52")
+
+[node name="7" type="Sprite2D" parent="Pools" unique_id=1436817430]
+position = Vector2(-12494.5, 6725.0005)
+scale = Vector2(7.5694447, 5.029297)
+texture = ExtResource("10_l8ah6")
+
+[node name="8" type="Sprite2D" parent="Pools" unique_id=325121496]
+position = Vector2(-5833, 6620.0005)
+scale = Vector2(15, 15)
 texture = ExtResource("9_8u370")
 
+[node name="9" type="Sprite2D" parent="Pools" unique_id=980732236]
+position = Vector2(-451, 6697)
+scale = Vector2(5, 5)
+texture = ExtResource("13_rga7q")
+
 [node name="10" type="Sprite2D" parent="Pools" unique_id=2020956462]
-position = Vector2(-10899, 1617.9995)
-scale = Vector2(10, 10)
+position = Vector2(4919.5, 6743)
+scale = Vector2(15, 15)
 texture = ExtResource("10_rga7q")
+metadata/_edit_group_ = true
 
 [node name="11" type="Sprite2D" parent="Pools" unique_id=1365037331]
-position = Vector2(-7269, 1618)
-scale = Vector2(10, 10)
-texture = ExtResource("11_6oujy")
+position = Vector2(10365.455, 6743)
+scale = Vector2(15, 15)
+texture = ExtResource("9_8u370")
+metadata/_edit_group_ = true
+
+[node name="12" type="Sprite2D" parent="Pools" unique_id=691489304]
+position = Vector2(15778, 5411.9995)
+scale = Vector2(5, 4.761)
+texture = ExtResource("15_6oujy")
 
 [node name="Decoration" type="Node2D" parent="." unique_id=208666459]
 position = Vector2(994, -445)
@@ -10521,6 +10559,13 @@ shape = SubResource("RectangleShape2D_luhhm")
 position = Vector2(-1221, -2677)
 shape = SubResource("RectangleShape2D_fh13f")
 
+[node name="MainDeath" type="Area2D" parent="." unique_id=228207313]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainDeath" unique_id=1578452020]
+polygon = PackedVector2Array(6369, -2145, 10685, -3738, 12835, -2894, 14985, -2863, 15937, -1804, 15645, 131, 15729, 686, 17587, 1124, 18175, 1667, 18429, 3212, 17702, 5799, 15270, 6661, 12652, 6576, 10202, 5833, 9071, 4921, 7719, 4701, 7635, 9161, 6329, 9621, 4972, 9625, 4935, 8519, 5113, 7246, 4302, 6488, 2229, 6338, -886, 10137, -3089, 9842, -3137, 6284, -5788, 5999, -6607, 4926, -8396, 4353, -10930, 4522, -11369, 3373, -11166, 2089, -10372, 1735, -10085, -2049, -11588, -5782, -9933, -7167, -8548, -6475, -6504, -3603, -4798, -3856, -4106, -8012, 252, -9724, 3727, -9055, 4934, -6045, 5477, -2809)
+
 [node name="PoolSizes" type="Area2D" parent="." unique_id=408963770]
 collision_layer = 16
 collision_mask = 0
@@ -10539,8 +10584,6 @@ polygon = PackedVector2Array(2262, 2567, 2260, 2488, 2244, 2488, 2242, 2417, 227
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="PoolSizes" unique_id=1054271341]
 polygon = PackedVector2Array(-139, -919, -95, -962, -71, -963, -66, -992, -11, -1043, 23, -1047, 117, -1123, 157, -1141, 154, -1400, 188, -1429, 209, -1494, 275, -1479, 278, -1433, 385, -1434, 388, -1403, 460, -1398, 453, -1356, 595, -1353, 605, -1434, 684, -1455, 683, -1496, 745, -1499, 748, -1558, 812, -1562, 827, -1613, 860, -1610, 864, -1645, 900, -1660, 989, -1659, 986, -1688, 1063, -1687, 1074, -1713, 1093, -1706, 1101, -1738, 1132, -1878, 1079, -1885, 1083, -1912, 1043, -1915, 1036, -1928, 1000, -1940, 1000, -1962, 1016, -1962, 1019, -2088, 995, -2096, 999, -2156, 925, -2151, 921, -2171, 862, -2168, 859, -2234, 803, -2237, 810, -2298, 630, -2299, 622, -2256, 565, -2250, 549, -2266, 461, -2267, 461, -2313, 357, -2314, 356, -2271, 278, -2269, 261, -2200, 178, -2203, 179, -2177, 151, -2187, 145, -2131, 113, -2140, 115, -2045, 65, -2047, 3, -2040, 11, -2080, -24, -2079, -80, -2141, -97, -2139, -126, -2204, -150, -2205, -148, -2247, -181, -2252, -250, -2286, -331, -2282, -327, -2301, -427, -2300, -431, -2283, -455, -2282, -466, -2266, -490, -2268, -494, -2252, -524, -2252, -526, -2238, -591, -2203, -649, -2201, -654, -2184, -695, -2189, -700, -2169, -845, -2172, -844, -2155, -875, -2156, -876, -2111, -925, -2067, -923, -1927, -942, -1933, -939, -1833, -955, -1837, -957, -1788, -985, -1786, -1032, -1725, -1039, -1702, -1120, -1705, -1116, -1605, -1101, -1605, -1101, -1560, -1066, -1553, -1049, -1533, -1051, -1509, -1037, -1505, -1036, -1493, -1006, -1489, -975, -1458, -970, -1430, -918, -1388, -922, -1366, -897, -1356, -908, -1302, -877, -1287, -873, -1226, -869, -1206, -857, -1174, -828, -1175, -809, -1143, -753, -1143, -717, -1109, -683, -1109, -612, -1068, -557, -1006, -556, -982, -525, -977, -491, -959, -492, -935, -352, -936, -351, -918)
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="PoolSizes" unique_id=1650113156]
 
 [node name="WorldCanvas" type="CanvasLayer" parent="." unique_id=989101090]
 
