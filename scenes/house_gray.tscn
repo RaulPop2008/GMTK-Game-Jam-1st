@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c20wlgxsd1nxl"]
+
+[ext_resource type="Texture2D" uid="uid://dsjnkphhoiqus" path="res://sprites/casa.png" id="1_dfaov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfaov"]
+size = Vector2(401, 201)
+
+[node name="HouseGray" type="StaticBody2D" unique_id=553338322]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=701330353]
+texture = ExtResource("1_dfaov")
+
+[node name="BodyBox" type="CollisionShape2D" parent="." unique_id=932855592]
+position = Vector2(35.5, 50.5)
+shape = SubResource("RectangleShape2D_dfaov")

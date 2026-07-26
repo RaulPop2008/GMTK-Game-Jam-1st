@@ -27,9 +27,8 @@ func _ready() -> void:
 	$VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/GoBackButtonUI.pressed.connect(on_go_back_options_pressed)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel") and is_paused==false and is_inventory==false:
+	if Input.is_action_just_pressed("ui_cancel") and is_paused==false and $"../CraftMenuUI".visible==false:
 		pause_accepted.emit(true)
-		is_inventory=true
 		is_paused=true
 		$DarkPanelUI.visible=true
 		$DarkPanelUI/PauseMenuButtonsUI/ResumeButtonUI.grab_focus()

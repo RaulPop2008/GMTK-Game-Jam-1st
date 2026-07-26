@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player: CharacterBody2D =$Player
 @onready var dialogue_start: Control =$WorldCanvas/DialogueStart
+@onready var world_sound:AudioStreamMP3=preload("res://SFX/zapsplat_nature_wind_strong_howling_through_building_exterior_designed_73950.mp3")
 
 func _ready() -> void:
 	player.set_physics_process(false)
@@ -27,3 +28,9 @@ func _on_player_item_pickup(item_name: String) -> void:
 
 func _on_dialogue_start_dialogue_finished() -> void:
 	player.set_physics_process(true)
+	var player:=AudioStreamPlayer.new()
+	player.bus="SFX"
+	player.stream=world_sound
+	add_child(player)
+	player.play()
+	player.finished.connect(player.play)

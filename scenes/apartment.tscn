@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0cyj8ee86dgj"]
+
+[ext_resource type="Texture2D" uid="uid://cyayviltvyyb3" path="res://sprites/bloc.png" id="1_xl163"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl163"]
+size = Vector2(308, 268)
+
+[node name="Apartment" type="StaticBody2D" unique_id=553338322]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=701330353]
+texture = ExtResource("1_xl163")
+
+[node name="BodyBox" type="CollisionShape2D" parent="." unique_id=932855592]
+position = Vector2(35, 60)
+shape = SubResource("RectangleShape2D_xl163")

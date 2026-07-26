@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://drae065fxlae8" path="res://sprites/items/suit.png" id="30_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://cxa2ylw5loc0a" path="res://sprites/items/manarobotica.png" id="31_487ah"]
 [ext_resource type="Texture2D" uid="uid://6852h63jed51" path="res://sprites/items/piciorrobotic.png" id="32_gl8cc"]
+[ext_resource type="Shader" uid="uid://4qpql21rhbq2" path="res://scripts/blur.gdshader" id="33_487ah"]
+[ext_resource type="FontFile" uid="uid://dj656dxhi3xw8" path="res://fonts/NAILSCRATCH.TTF" id="34_md1ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(64, 139)
@@ -40,10 +42,10 @@ size = Vector2(64, 139)
 radius = 125.67418
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 110.01818
+radius = 129.062
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl8cc"]
-size = Vector2(56.5, 51)
+[sub_resource type="CircleShape2D" id="CircleShape2D_487ah"]
+radius = 32.01562
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("3_ur7pv")
@@ -164,10 +166,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_f1ej7")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_oprun")
 }],
 "loop": true,
@@ -175,16 +177,16 @@ animations = [{
 "speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.65,
 "texture": ExtResource("3_smehm")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": SubResource("AtlasTexture_a8ls1")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": ExtResource("3_smehm")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": SubResource("AtlasTexture_qfm1y")
 }],
 "loop": true,
@@ -192,16 +194,16 @@ animations = [{
 "speed": 4.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.65,
 "texture": ExtResource("4_ur7pv")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": SubResource("AtlasTexture_fulsm")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": ExtResource("4_ur7pv")
 }, {
-"duration": 1.0,
+"duration": 0.65,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
 "loop": true,
@@ -209,16 +211,21 @@ animations = [{
 "speed": 4.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_60mlk")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_i4ail")
 }],
 "loop": true,
 "name": &"walk_up",
 "speed": 3.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_md1ol"]
+shader = ExtResource("33_487ah")
+shader_parameter/intensity = 0.5
+shader_parameter/corner_size = 0.4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gl8cc"]
 texture = ExtResource("17_ke2ow")
@@ -270,6 +277,7 @@ texture = ExtResource("32_gl8cc")
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_3vyb7")
+debug_test_mode = false
 
 [node name="PlayerBody" type="CollisionShape2D" parent="." unique_id=1412975121]
 position = Vector2(10, -14.5)
@@ -292,13 +300,16 @@ shape = SubResource("CircleShape2D_qhqgy")
 debug_color = Color(0.380136, 0.59707314, 0.4083551, 0.41960785)
 
 [node name="PlayerHitBox" type="Area2D" parent="." unique_id=1377085553]
+collision_layer = 0
+collision_mask = 16
 
 [node name="HitBox" type="CollisionShape2D" parent="PlayerHitBox" unique_id=2047769356]
 position = Vector2(5, 29)
-shape = SubResource("RectangleShape2D_gl8cc")
+shape = SubResource("CircleShape2D_487ah")
 debug_color = Color(0.76390666, 0.36645108, 0.67729676, 0.41960785)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1882499560]
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 drag_horizontal_enabled = true
@@ -313,9 +324,17 @@ drag_bottom_margin = 0.08
 [node name="PlayerAnimations" type="AnimatedSprite2D" parent="." unique_id=239248404]
 position = Vector2(1, -61)
 sprite_frames = SubResource("SpriteFrames_a38lo")
-animation = &"crouch_up"
+animation = &"walk_up"
 
 [node name="PlayerCanvas" type="CanvasLayer" parent="." unique_id=359650789]
+
+[node name="BlurUI" type="ColorRect" parent="PlayerCanvas" unique_id=433151088]
+material = SubResource("ShaderMaterial_md1ol")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AgeContainerUI" type="VBoxContainer" parent="PlayerCanvas" unique_id=654292763]
 anchors_preset = 2
@@ -595,8 +614,28 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_g5jhy")
 
+[node name="DeathMenuUI" type="MarginContainer" parent="PlayerCanvas" unique_id=166383742]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeathUI" type="ColorRect" parent="PlayerCanvas/DeathMenuUI" unique_id=1604945712]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="PlayerCanvas/DeathMenuUI" unique_id=1777634649]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("34_md1ol")
+theme_override_font_sizes/font_size = 50
+text = "You Stepped In a Pool Of Acid Unequipped!"
+
 [connection signal="area_entered" from="PlayerInteractionZone" to="." method="_on_player_interaction_zone_area_entered"]
 [connection signal="area_exited" from="PlayerInteractionZone" to="." method="_on_player_interaction_zone_area_exited"]
 [connection signal="area_entered" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_entered"]
 [connection signal="area_exited" from="PlayerPickupZone" to="." method="_on_player_pickup_zone_area_exited"]
+[connection signal="area_entered" from="PlayerHitBox" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="animation_finished" from="PlayerAnimations" to="." method="_on_player_animations_animation_finished"]

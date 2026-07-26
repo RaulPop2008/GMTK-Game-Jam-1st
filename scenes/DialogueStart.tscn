@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm1xh6l5u8eex"]
 
-[ext_resource type="Script" uid="uid://dkw7phmjomdw6" path="res://scenes/dialogue_start.gd" id="1_jacj1"]
+[ext_resource type="Script" uid="uid://dkw7phmjomdw6" path="res://scripts/dialogue_start.gd" id="1_jacj1"]
 [ext_resource type="Texture2D" uid="uid://bjqfgfn1yl1sh" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.23_PM.jpeg" id="1_oc1ho"]
 [ext_resource type="FontFile" uid="uid://b6qrw8p75x5hg" path="res://fonts/BlackOpsOne-Regular.ttf" id="3_h7vk0"]
 

@@ -13,10 +13,21 @@
 [ext_resource type="Script" uid="uid://b74u76t88lct3" path="res://scripts/label_behaviour.gd" id="6_sjwyb"]
 [ext_resource type="FontFile" uid="uid://bbwhb0e0mfweh" path="res://fonts/Gelasio-VariableFont_wght.ttf" id="8_g2v8e"]
 [ext_resource type="Texture2D" uid="uid://dfdqr5j6idfsc" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.09_PM.jpeg" id="8_igvt4"]
+[ext_resource type="Texture2D" uid="uid://cygifhqdakjln" path="res://sprites/items/blur.png" id="12_gj1yn"]
+[ext_resource type="Texture2D" uid="uid://dvbhfkgkucj83" path="res://sprites/items/mask.png" id="12_n74c5"]
 [ext_resource type="Texture2D" uid="uid://bfnq3s17psxui" path="res://sprites/trash-can (1).png" id="12_upmhx"]
+[ext_resource type="Texture2D" uid="uid://k6jlnk0b0qkf" path="res://sprites/items/centrat.png" id="13_5kjus"]
+[ext_resource type="Texture2D" uid="uid://drae065fxlae8" path="res://sprites/items/suit.png" id="13_8wu16"]
 [ext_resource type="Script" uid="uid://74lte7npn6ek" path="res://scripts/save_button_ui.gd" id="13_g2v8e"]
 [ext_resource type="Texture2D" uid="uid://cd027sjih3x1b" path="res://sprites/pixil-frame-0 (23).png" id="13_ihktq"]
+[ext_resource type="Texture2D" uid="uid://dgb14w6lciw5i" path="res://sprites/items/creier2.png" id="14_bj1rn"]
+[ext_resource type="Texture2D" uid="uid://cxa2ylw5loc0a" path="res://sprites/items/manarobotica.png" id="14_sdeak"]
+[ext_resource type="Texture2D" uid="uid://6852h63jed51" path="res://sprites/items/piciorrobotic.png" id="15_32nla"]
+[ext_resource type="Texture2D" uid="uid://v7as634tvbep" path="res://sprites/items/mana.png" id="15_36vcn"]
+[ext_resource type="Texture2D" uid="uid://cdvix56rn33ca" path="res://sprites/items/shake.png" id="16_36vcn"]
 [ext_resource type="Script" uid="uid://dsi3bwnichnsf" path="res://scripts/go_back_button_special_ui.gd" id="16_ihktq"]
+[ext_resource type="Texture2D" uid="uid://x8qv2g5vcog" path="res://sprites/items/picior.png" id="17_2yflp"]
+[ext_resource type="Texture2D" uid="uid://phu4pwrbv30n" path="res://sprites/items/somn.png" id="18_n74c5"]
 [ext_resource type="Texture2D" uid="uid://bjqfgfn1yl1sh" path="res://sprites/WhatsApp_Image_2026-07-24_at_7.40.23_PM.jpeg" id="18_x8pta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igvt4"]
@@ -57,6 +68,22 @@ shader_parameter/glow_strength = 5.0
 shader_parameter/glow_size = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rns2u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wu16"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_foann"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0ia7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxw23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkpm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h2ot"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2dgd"]
 shader = ExtResource("1_rns2u")
@@ -132,6 +159,70 @@ shader_parameter/glow_size = 3.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rmtt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dnje"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kjus"]
+texture = ExtResource("8_igvt4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdeak"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32nla"]
+shader = ExtResource("5_3huio")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbo4m"]
+texture = ExtResource("12_n74c5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfun4"]
+texture = ExtResource("13_8wu16")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlan2"]
+texture = ExtResource("14_sdeak")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27ch3"]
+texture = ExtResource("15_32nla")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2yflp"]
+texture = ExtResource("12_gj1yn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n74c5"]
+texture = ExtResource("13_5kjus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5v8bm"]
+texture = ExtResource("14_bj1rn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wu16"]
+texture = ExtResource("15_36vcn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdeak"]
+texture = ExtResource("16_36vcn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32nla"]
+texture = ExtResource("17_2yflp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8a34"]
+texture = ExtResource("18_n74c5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvx0m"]
+shader = ExtResource("1_rns2u")
+shader_parameter/glow_color = Color(0, 0.6, 0.2, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_size = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wst68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sooof"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_78vc3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa7qc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ussdm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upmhx"]
 texture = ExtResource("2_ihktq")
@@ -539,7 +630,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../StartGameButtonUI")
-focus_neighbor_bottom = NodePath("../CreditsButtonUI")
+focus_neighbor_bottom = NodePath("../GuideButtonUI")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojb23")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yubou")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rns2u")
@@ -548,13 +639,26 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_u2dgd")
 text = "Options"
 script = ExtResource("1_yubou")
 
+[node name="GuideButtonUI" type="Button" parent="MainMenuUI/MainContainerUI/MainMenuButtonsUI" unique_id=1993209136]
+material = SubResource("ShaderMaterial_8wu16")
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButtonUI")
+focus_neighbor_bottom = NodePath("../CreditsButtonUI")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_foann")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v0ia7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xxw23")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dkpm2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2h2ot")
+text = "Game Guide"
+script = ExtResource("1_yubou")
+
 [node name="CreditsButtonUI" type="Button" parent="MainMenuUI/MainContainerUI/MainMenuButtonsUI" unique_id=1798021605]
 material = SubResource("ShaderMaterial_u2dgd")
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_top = NodePath("../OptionsButtonUI")
+focus_neighbor_top = NodePath("../GuideButtonUI")
 focus_neighbor_bottom = NodePath("../QuitGameButtonUI")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojb23")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yubou")
@@ -680,6 +784,254 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_igvt4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x8pta")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_2rmtt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0dnje")
+text = "Go Back"
+script = ExtResource("1_yubou")
+
+[node name="GuideMenuUI" type="MarginContainer" parent="." unique_id=835013513]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GuideBackground" type="Panel" parent="GuideMenuUI" unique_id=340331018]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5kjus")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GuideMenuUI/GuideBackground" unique_id=458340174]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -522.5
+offset_top = -247.0
+offset_right = 522.5
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer" unique_id=1399996444]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer" unique_id=786292716]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="WASDKeys" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=72620164]
+material = SubResource("ShaderMaterial_sdeak")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "\"W\",\"A\",\"S\",\"D\":
+4 Direction Movement"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="Ekey" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1513964873]
+material = SubResource("ShaderMaterial_32nla")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "\"E\":
+Item Pickup"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="FKey" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1666183801]
+material = SubResource("ShaderMaterial_32nla")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "\"F\":
+Use/Unuse Crafting Bench"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="EscKey" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1456656287]
+material = SubResource("ShaderMaterial_32nla")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "\"Esc\":
+Open Pause Menu"
+horizontal_alignment = 1
+script = ExtResource("6_sjwyb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2106539514]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1360979515]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wbo4m")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1091612629]
+layout_mode = 2
+text = "\"Oxygen Mask\": Does Nothing Special"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1967102060]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2035607278]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sfun4")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=462161966]
+layout_mode = 2
+text = "\"Body Suit\": Reduces The Effectiveness Of Every Debuff By A Small Amount"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=312812772]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=325369353]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlan2")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1805985105]
+layout_mode = 2
+text = "\"Robot Arm\": Increases Pickup Radius"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=207672987]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4" unique_id=800474295]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_27ch3")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1942612825]
+layout_mode = 2
+text = "\"Robot Leg\": Increases Movement Speed "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer" unique_id=1038654557]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1137625819]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=329032602]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2yflp")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=851541571]
+layout_mode = 2
+text = "\"Weak Eyes\": Creates Vision Blur On The Screen
+(effectiveness reduced by \"oxygen mask\")"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=809539273]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1212365067]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n74c5")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=501080917]
+layout_mode = 2
+text = "\"Heavy Breathing\": Does Nothing Special
+(effectiveness reduced by \"oxygen mask\")"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1796777701]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3" unique_id=1174266492]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5v8bm")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3" unique_id=115681221]
+layout_mode = 2
+text = "\"Brain Damage\": Random Chance To 
+Make The Player Go In The Opposite Direction"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=82733434]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4" unique_id=1840377072]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8wu16")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4" unique_id=1908403610]
+layout_mode = 2
+text = "\"Injured Hand\": Random Chance To Not Pick Up An Item
+(effectiveness reduced by \"robot arm\")"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1011155702]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" unique_id=1418872817]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sdeak")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" unique_id=1473802437]
+layout_mode = 2
+text = "\"Shaking\": Screen Will Randomly Start Shaking"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=897807072]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer6" unique_id=1362283122]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_32nla")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer6" unique_id=770725863]
+layout_mode = 2
+text = "\"Injured Leg\": Random Chance To Stop Moving For A Period
+(effectiveness reduced by \"robot leg\")"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=511256341]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer7" unique_id=1352930253]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8a34")
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer7" unique_id=1374896026]
+layout_mode = 2
+text = "\"Faint\": Random Chance To Faint
+(internal body age will continue rising)"
+
+[node name="Label" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1219974667]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "!!!NOTE: Every SIngle Debuff Increases The Internal Body Age Rate"
+
+[node name="Label2" type="Label" parent="GuideMenuUI/GuideBackground/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1961293713]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "!!!NOTE: You Need Atleast One Of Every Equipment,
+ To Safely Step On Acid"
+
+[node name="GoBackButtonUI" type="Button" parent="GuideMenuUI/GuideBackground/VBoxContainer" unique_id=1367921039]
+material = SubResource("ShaderMaterial_vvx0m")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wst68")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sooof")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_78vc3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wa7qc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ussdm")
 text = "Go Back"
 script = ExtResource("1_yubou")
 

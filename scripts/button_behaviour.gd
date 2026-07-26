@@ -26,7 +26,7 @@ func on_hover():
 	var player:=AudioStreamPlayer.new()
 	player.bus="SFX"
 	player.stream=hover_sound
-	player.volume_db=-42
+	player.volume_db=-30
 	add_child(player)
 	player.play()
 	player.finished.connect(player.queue_free)

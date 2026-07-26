@@ -5,6 +5,7 @@ extends Control
 @onready var audio_panel:Control=$AudioMenuUI
 @onready var video_panel:Control=$VideoMenuUI
 @onready var credits_panel:Control=$CreditsMenuUI
+@onready var guide_panel:Control=$GuideMenuUI
 @onready var saves_panel:Control=$SavesMenuUI
 @onready var ensure_panel:Control=$EnsureMenuUI
 
@@ -13,7 +14,7 @@ extends Control
 @onready var left_save_button:Button=$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/LeftSaveContainerUI/LeftSaveButtonUI
 @onready var right_save_button:Button=$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/RightSaveContainerUI/RightSaveButtonUI
 
-@onready var main_sound:AudioStreamWAV=preload("res://SFX/I deffinetly came.wav")
+@onready var main_sound:AudioStreamWAV=preload("res://SFX/I came even longer.wav")
 
 const NEW_SAVE_ICON:Texture2D=preload("res://sprites/pixil-frame-0 (23).png")
 const LOAD_SAVE_ICON:Texture2D=preload("res://sprites/pixil-frame-0 (24).png")
@@ -24,7 +25,6 @@ func _ready():
 	var player:=AudioStreamPlayer.new()
 	player.bus="Music"
 	player.stream=main_sound
-	player.volume_db=-0
 	add_child(player)
 	player.play()
 	player.finished.connect(player.play)
@@ -36,6 +36,7 @@ func _ready():
 	$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/RightTrashButtonUI.pressed.connect(on_right_trash_pressed)
 	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/StartGameButtonUI.pressed.connect(on_start_pressed)
 	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/OptionsButtonUI.pressed.connect(on_options_pressed)
+	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/GuideButtonUI.pressed.connect(on_guide_pressed)
 	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/CreditsButtonUI.pressed.connect(on_credits_pressed)
 	$MainMenuUI/MainContainerUI/MainMenuButtonsUI/QuitGameButtonUI.pressed.connect(on_quit_pressed)
 	$OptionsMenuUI/OptionsBackground/OptionsContainerUI/AudioVideoContainerUI/AudioButtonUI.pressed.connect(on_audio_pressed)
@@ -44,6 +45,7 @@ func _ready():
 	$EnsureMenuUI/Panel/EnsureMenuContainerUI/OptionsContainerUI/YesButtonUI.pressed.connect(on_yes_pressed)
 	$EnsureMenuUI/Panel/EnsureMenuContainerUI/OptionsContainerUI/NoButtonUI.pressed.connect(on_no_pressed)
 	$SavesMenuUI/SavesMenuContainerUI/ButtonsContainerUI/GoBackButtonSpecialUI.pressed.connect(on_go_back_main_pressed)
+	$GuideMenuUI/GuideBackground/VBoxContainer/GoBackButtonUI.pressed.connect(on_go_back_main_pressed)
 	$CreditsMenuUI/CreditsContainerUI/GoBackButtonUI.pressed.connect(on_go_back_main_pressed)
 	$OptionsMenuUI/OptionsBackground/OptionsContainerUI/GoBackButtonUI.pressed.connect(on_go_back_main_pressed)
 	$AudioMenuUI/AudioBackgroundUI/AudioMenuContainerUI/GoBackButtonUI.pressed.connect(on_go_back_options_pressed)
@@ -52,7 +54,7 @@ func _ready():
 	update_save_slot_previews()
 
 func show_panel(panel: Control):
-	for p in [main_panel,options_panel,credits_panel,audio_panel,video_panel,saves_panel,ensure_panel]:
+	for p in [main_panel,options_panel,guide_panel,credits_panel,audio_panel,video_panel,saves_panel,ensure_panel]:
 		p.visible = (p == panel)
 
 func update_save_slot_previews() -> void:
@@ -128,6 +130,10 @@ func on_audio_pressed():
 func on_video_pressed():
 	$VideoMenuUI/VideoBackgroundUI/VideoMenuContainerUI/GoBackButtonUI.grab_focus()
 	show_panel(video_panel)
+
+func on_guide_pressed():
+	$GuideMenuUI/GuideBackground/VBoxContainer/GoBackButtonUI.grab_focus()
+	show_panel(guide_panel)
 
 func on_credits_pressed():
 	$CreditsMenuUI/CreditsContainerUI/GoBackButtonUI.grab_focus()
